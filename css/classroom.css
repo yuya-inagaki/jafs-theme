@@ -1,0 +1,99 @@
+/*****************************
+
+    教室一覧・教室詳細ページ・初めての方へ共通CSS
+
+******************************/
+.classroom_main h2{
+    position: relative;
+    padding: 0.6em;
+    background: #e0edff;
+}
+.classroom_main h2:after{
+position: absolute;
+content: '';
+top: 100%;
+left: 30px;
+border: 15px solid transparent;
+border-top: 15px solid #e0edff;
+width: 0;
+height: 0;
+}
+
+.classroom_main .row, .first_main .row{width:100%; margin:0; padding:0; display:-webkit-box; display:-moz-box; display:-ms-box; display:-webkit-flexbox; display:-moz-flexbox; display:-ms-flexbox; display:-webkit-flex; display:-moz-flex; display:-ms-flex; display:flex; -webkit-box-lines:multiple; -moz-box-lines:multiple; -webkit-flex-wrap:wrap; -moz-flex-wrap:wrap; -ms-flex-wrap:wrap; flex-wrap:wrap;}
+
+.class_info {
+    margin: 1.5em 0;
+    background: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.class_info_title {
+    font-size: 1.2em;
+    background: #ff862d;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.class_info p {
+    padding: 5px 10px;
+    margin: 0;
+}
+.class_detail {
+    width:100%; display:block;
+    margin: 1.5em 0;
+    background: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.class_detail_title {
+    font-size: 1.5em;
+    background: #3a8dff;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.class_detail_robo{background: #ff8e2d;}
+.class_detail_sp{background: #35b963;}
+.class_detail_limit {
+    font-size: 1.1em;
+    background: #ff5142;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    letter-spacing: 0.05em;
+}
+.class_detail_open{background: #ff8a26;}
+.class_detail p {
+    padding: 5px 10px;
+    margin: 0;
+}
+.class_detail .subtitle{
+    padding:5px 10px; background-color:#e6e6e6; font-weight:bold;
+}
+
+/* お申込みボタン */
+a.btn_apply {position: relative; display:inline-block; width: 220px; padding: 0.8em; margin:5px 0; text-align: center; text-decoration: none; color: #fff; background: #2196F3; border:solid 1px #fff; overflow: hidden; font-weight:bold;}
+a.btn_apply_new{background: #ff50a8;}
+a.btn_apply_cost{width: 290px; background: #2196F3;}
+a.btn_apply_hoshu{width: 270px; background: #ff50a8;}
+a.btn_apply_robo{background: #ff8e2d;}
+a.btn_apply_sp{background: #35b963;}
+a.btn_apply:before {content:""; position: absolute; top: -25px; left: -20px; height:90px; width:20px; background : #fff; opacity: 0.3; transform: rotate(40deg); transition: 0.3s; }
+a.btn_apply:hover{opacity:0.8;}
+a.btn_apply:hover, a.btn_apply:active, a.btn_apply:visited{color:white; text-decoration:none;}
+/* //お申込みボタン */
+
+/* ここから教室一覧レイアウト */
+
+.placement_main h2{border:none;}
+.place_detail { margin: 0.5em 0; background: #f8f8f8; box-shadow: 0 4px 8px rgba(103, 103, 103, 0.22); border-radius:5px;}
+.place_detail_title {font-size: 1.5em; background: #3a8dff; padding: 4px; text-align: center; color: #FFF; font-weight: bold; letter-spacing: 0.05em; border-radius: 5px 5px 0 0;}
+.place_detail p { padding: 5px 10px; margin: 0; text-align:center; }
+.hokkaidou{background:#499f00;}
+.touhoku{background-color:#37c1ff;}
+.kantou{background-color:#3381ff;}
+.chuubu{background-color:#1fa000;}
+.kinki{background-color:#c99b00;}
+.kyushu{background-color:#ff513a;}

@@ -1,0 +1,48 @@
+.relative{position:relative;}
+
+/* 最重要ニュース */
+@media screen and (min-width: 1001px) {
+    .oshirase{width:100%; background-color:white; box-sizing:border-box; border-radius:5px;}
+    .oshirase-left{float:left; background-color:#ff3188; color:white; margin-right:10px; border-radius:5px 0 0 5px; padding:10px;}
+    .oshirase-right{overflow:hidden; padding:10px 0; color:black; white-space:nowrap;}
+    .oshirase-bottom{width:100%;}
+}
+@media screen and (max-width: 1000px) {
+    .oshirase{width:100%; box-sizing:border-box;}
+    .oshirase-left{display:none;}
+    .oshirase-right{float:left; width:100%; padding:10px; background-color:white; color:black; border-radius:5px;}
+    .oshirase-bottom{clear:both; height:1px;}
+}
+/* //最重要ニュース */
+
+#top-sec1{background:url(../img/background/bg01.png) left top repeat; font-family: "M PLUS Rounded 1c"; font-size:1.1em; padding:20px 0;}
+#top-sec1 span.title{margin:0; padding:0; font-size:3em; font-weight:bolder; position:relative; bottom:-10px;}
+#top-sec1 a.news-all span{background-color:black; color:white; padding:10px 20px; border-radius:5px; box-shadow: 0px 2px 10px #bebebe; position:absolute; right:20px; top:25px; font-weight:bold;}
+#top-sec1 .news-box{width:100%; margin:20px 0; background-color:#fafafa; border-radius:5px; box-shadow: 0px 2px 4px #bebebe; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; flex-wrap: nowrap;}
+#top-sec1 a{text-decoration:none;}
+#top-sec1 a:hover .date{background-color:#3e3e3e;}
+#top-sec1 .news-box .date{background-color:#5a5a5a; color:white; font-weight:bold; padding:20px 10px; border-top-left-radius:5px; border-bottom-left-radius:5px; display:flex; align-items: center; /* 縦方向中央揃え */transition:0.3s;}
+#top-sec1 .news-box .title{color:black; padding:20px 10px;}
+
+#top-sec2{font-family: "M PLUS Rounded 1c"; background:linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/toppage/06.jpg) center / cover; padding:20px 0;}
+#top-sec2 span.title{margin:0; padding:0; font-size:3em; font-weight:bolder; position:relative; bottom:-10px;}
+#top-sec2 .advantage-box{width:100%; margin:20px 0; background-color:#fafafa; border-radius:25px; box-shadow: 0px 2px 4px #bebebe; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; flex-wrap: nowrap;}
+#top-sec2 .advantage-box .num{background-color:#0058ff; color:white; font-weight:bold; padding:10px 10px; border-radius:25px; display:flex; align-items: center; /* 縦方向中央揃え */transition:0.3s;}
+#top-sec2 .advantage-box .title{color:black; padding:10px 10px; display:flex; align-items: center; /}
+
+/* SNS用CSS */
+#top-sns{background:linear-gradient(90deg,#3B5998 0%,#3B5998 50%,#1DA1F2 50%,#1DA1F2 100%); font-family: "M PLUS Rounded 1c";}
+#top-sns span.title{color:white; font-weight:bold; font-size:2em;}
+#top-sns span.sns-btn{background-color:rgba(0, 0, 0, 0.6); border-radius:5px; padding:10px 20px; color:white; font-weight:bold; box-shadow: 0px 2px 4px #333333;}
+#top-sns .top-sns-sm img{width:60px; height:70px; display:block; margin:0 auto; margin-bottom:20px;}
+/* //SNS用CSS */
+
+/* 一次的なCSS */
+#top-sec-temp{padding:30px 0; background-color:white;}
+#top-sec-temp .box{width:100%; margin:15px 0; padding:0; border-radius:5px; box-shadow: 0px 2px 8px #b2b2b2; transition:0.3s;}
+#top-sec-temp .box img{width:100%; margin:0; border-top-left-radius:5px; border-top-right-radius:5px;}
+#top-sec-temp .box p{padding:5px; text-align:center; font-family: "M PLUS Rounded 1c"; font-size:1.3em; font-weight:bold;}
+#top-sec-temp a{text-decoration:none; color:black;}
+#top-sec-temp a:hover .box{box-shadow: 0px -2px 8px #b2b2b2;}
+.row-eq-height {display: flex; flex-wrap: wrap;}
+/* //一次的なCSS */

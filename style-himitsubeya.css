@@ -1,0 +1,281 @@
+/*
+Theme Name: rikakai
+Theme URI: http://e-kagaku.com/wordpress/themes/rikakai
+Author: tomoya matsumoto
+Author URI: none
+Description: this theme is for jafs.
+Version: 1.0
+*/
+
+/*all*/
+body {
+    /*font-size: 14px;*/
+    background: #88CCE8;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0; /*15 0*/
+    line-height: 0;
+}
+
+h2 {
+    font-size: 25px;
+    border-left: 8px solid #3238DD;
+    border-bottom: dotted 1px #190808;
+    width: 100%;
+    line-height: 30px;
+    padding-left: 5px;
+}
+
+h3 {
+    font-size: 15px;
+    border-left: 4px solid #3238DD;
+    border-bottom: dotted 1px #190808;
+    width: 100%;
+    line-height: 20px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:visited {
+    color: black;
+}
+
+a:link {
+    color: black;
+}
+
+p {
+    padding: 7px;
+    margin: 0px;
+}
+
+li {
+    padding: 7px;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.left {
+    float: left;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.right {
+    float: right;
+}
+
+img {
+    margin: 5px;
+}
+
+/*header*/
+header {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: #3238DD;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+menu-main-nav-container {
+    background: #3238DD;
+}
+
+.menu {
+    margin-bottom: 5px;
+    font-size: 18px;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    font-family: 'Droid Sans Mono',;
+}
+
+.menu > li {
+    float: left;
+    text-align: center;
+    border-right: 1px solid white; /* 区切り線 */
+    font-weight: bold;
+}
+
+.menu a {
+    padding: 10px 18px;
+    color: white;
+    background: #3238DD;
+    display: block;
+}
+
+.menu a:hover {
+    background: white;
+    color: #3238DD
+}
+
+.menu li > ul {
+    display: none;
+}
+
+/*posts*/
+#main {
+    background: white;
+}
+
+#posts {
+    width: 800px;
+    float: left;
+    background: white;
+    overflow: hidden;
+    padding: 10px;
+}
+
+#post {
+    margin: 0px;
+    padding: 10px;
+
+}
+
+.post-header {
+}
+
+.post-image {
+
+}
+
+#posts-top {
+    width: 680px;
+    float: left;
+    background: white;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/*sidebar*/
+#sidebar ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar {
+    float: left;
+    width: 180px;
+    background: #3238DD;
+}
+
+.sidebar {
+    font-size: 18px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.sidebar > a {
+    color: #3238DD;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar li > a {
+    padding-left: 1em;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 7px;
+    color: white;
+}
+
+#sidebar a {
+    display: block;
+}
+
+#sidebar ul > li > ul > li > a {
+    background: #00FFFF;
+    font-size: 90%;
+}
+
+#sidebar ul > li > ul > li > ul > li > a {
+    background: #00FFBF;
+    font-size: 80%;
+}
+
+#sidebar ul > li > ul > li > ul > li > ul > li > a {
+    background: #81DAF5;
+    font-size: 70%;
+}
+
+/*widget*/
+.l-sidebar {
+    float: left;
+    width: 200px;
+    background: white;
+}
+
+.l-sidebar > img {
+    width: 190px;
+}
+
+.l-sidebar > h3 {
+    text-align: center;
+}
+
+.r-sidebar {
+    float: left;
+    width: 200px;
+    background: white;
+}
+
+/*footer*/
+footer {
+    background: white;
+}
+
+footer > address {
+    padding: 20px;
+}
+
+.footer {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
