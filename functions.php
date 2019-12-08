@@ -37,40 +37,24 @@ function my_user_meta($wb) {
 	return $wb;
 }
 add_filter('user_contactmethods', 'my_user_meta', 10, 1);
-//2.custom post type
-// カスタム投稿タイプ作成
-function create_post_type()
-{
-	$supports = [
-		'title',
-		'editor',
-		'thumbnail',
-		'revisions'
-	];
-	// add post type
-	register_post_type('kitahara-cafe',
-		[
-			'label' => 'Kitahara\'s Cafe',
-			'public' => true,
-			'menu_position' => 5,
-			'supports' => $supports
-		]
-	);
-	// add taxonomy
-	register_taxonomy(
-		'kitahara_taxonomy',
-		'kitahara',
-		[
-			'label' => 'カテゴリ',
+
+//////////////////////////////////////////////////
+//カスタム投稿タイプの追加
+//////////////////////////////////////////////////
+function create_post_type() {
+	register_post_type( 'pickup', // 投稿タイプ名の定義
+		array(
 			'labels' => array(
-				'all_items' => 'カテゴリ一覧',
-				'add_new_item' => '新規カテゴリを追加'
+				'name' => __( 'Top Pickup' ), // 表示する投稿タイプ名
+				'singular_name' => __( 'Top Pickup' )
 			),
-			'hierarchical' => true
-		]
+			'public' => true,
+			'menu_position' =>5,
+		)
 	);
 }
-add_action('init', 'create_post_type');
+add_action( 'init', 'create_post_type' );
+
 //3.my func
 //4.
 //5.
