@@ -3,10 +3,23 @@
     トップページスライダーテンプレート
 
 ------------------------------------->
-
 <div class="top-slider">
-    <a href="http://global-science.or.jp/src/" target="_blank"><div class="contents slick-slide"><div class="contents_img" style="background:url('<?php echo get_template_directory_uri(); ?>/img/slideshow/top01.jpg'); background-position:center center; background-size:cover;"></div><div class="text"><div class="text_large"><span>スペース</span><br><span>ロボットコンテスト</span></div><div class="text_small"><span>月面基地をイメージしたコースに挑戦しよう！</span></div></div></div></a>
-    <a href="http://global-science.or.jp/grsc/" target="_blank"><div class="contents slick-slide"><div class="contents_img" style="background:url('<?php echo get_template_directory_uri(); ?>/img/slideshow/top04.jpg'); background-position:center center; background-size:cover;"></div><div class="text"><div class="text_large"><span>国際・国内科学合宿</span></div><div class="text_small"><span>本格的な科学研究にチャレンジ！</span></div></div></div></a>
-    <a href="http://e-kagaku.com/top_general/curriculum/"><div class="contents slick-slide"><div class="contents_img" style="background:url('<?php echo get_template_directory_uri(); ?>/img/slideshow/top02.png'); background-position:center center; background-size:cover;"></div><div class="text"><div class="text_large"><span>JAFS</span><br><span>カリキュラム</span></div><div class="text_small"><span>ステップアップ型のカリキュラムでしっかり学習</span></div></div></div></a>
-    <a href="http://global-science.or.jp/cafe/" target="_blank"><div class="contents slick-slide"><div class="contents_img" style="background:url('<?php echo get_template_directory_uri(); ?>/img/slideshow/top03.png'); background-position:center center; background-size:cover;"></div><div class="text"><div class="text_large"><span>北原代表の</span><br><span>ブログOPEN</span></div><div class="text_small"><span>e - k a g a k u  c a f e</span></div></div></div></a>
+    <?php
+        $paged = get_query_var('paged') ? get_query_var('paged') : 1 ; //ページの判定
+        $args =	array(
+            'posts_per_page'   => 6, //表示件数
+            'post_type' => 'pickup',   //投稿タイプの指定
+            'orderby'          => 'modified', //ソートの基準
+            'order'            => 'DESC', //DESC降順　ASC昇順
+            'post_status'      => 'publish', //公開状態
+            'caller_get_posts' => 1, //取得した記事の何番目から表示するか
+            'has_password' => false, //パスワード付きの記事は表示させない
+        );
+        $wp_query = new WP_Query($args);
+        while ($wp_query->have_posts()) : $wp_query->the_post();
+        $thumbnail_id = get_post_thumbnail_id();
+        $eye_img = wp_get_attachment_image_src( $thumbnail_id , 'large' );
+    ?>
+        <a href="<?php echo get_post_meta($post->ID, "pickup_link", true); ?>" target="_blank"><div class="contents slick-slide"><div class="contents_img" style="background:url('<?php echo $eye_img[0]; ?>'); background-position:center center; background-size:cover;"></div><div class="text"><div class="text_large"><span><?php echo get_post_meta($post->ID, "pickup_title", true); ?></span></div><div class="text_small"><span><?php echo get_post_meta($post->ID, "pickup_description", true); ?></span></div></div></div></a>
+    <?php endwhile; ?>
 </div>
