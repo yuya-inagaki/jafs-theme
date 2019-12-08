@@ -50,10 +50,118 @@ function create_post_type() {
 			),
 			'public' => true,
 			'menu_position' =>5,
+			'supports' => [
+				'title',
+				'thumbnail',
+				'revisions'
+			]
 		)
 	);
 }
 add_action( 'init', 'create_post_type' );
+
+//////////////////////////////////////////////////
+//カスタムフィールドの追加
+//////////////////////////////////////////////////
+add_action( 'admin_menu', 'add_custom_field' );
+function add_custom_field() {
+	add_meta_box( 'custom-pickup_howto', '操作方法', 'create_pickup_howto', 'pickup', 'normal' );
+    add_meta_box( 'custom-pickup_title', 'タイトル', 'create_pickup_title', 'pickup', 'normal' );
+    add_meta_box( 'custom-pickup_description', '説明文', 'create_pickup_description', 'pickup', 'normal' );
+    add_meta_box( 'custom-pickup_link', 'リンク先URL', 'create_pickup_link', 'pickup', 'normal' );
+    add_meta_box( 'custom-pickup_memo', 'メモ', 'create_pickup_memo', 'pickup', 'normal' );
+}
+ 
+// カスタムフィールドのHTMLを追加する時の処理
+function create_pickup_howto() {
+	// HTMLの出力
+	echo '
+		e-kagakuトップページに表示するスライダーの作成・編集を行う画面です。<br>
+		トップページのスライダーの表示には「タイトル」と「説明文」と「リンク先URL」と「アイキャッチ画像」の合計4つの指定が必須となります。<br><br>
+		<b>1. タイトル</b><br>
+		スライダーの太文字部分です<br><br>
+		<b>2. 説明文</b><br>
+		タイトルの下に表示される説明文です。20文字程度で入力してください<br><br>
+		<b>3. リンク先URL</b><br>
+		画像をクリックした際に移動したいページのURLをここで指定してください（https:// or http:// で始まるもの）<br><br>
+		<b>4. メモ</b><br>
+		このスライダーが何のために存在するのか、今後どう変えたいかなどメモをするための物で管理者のみ閲覧可能です。一般ユーザーは閲覧不可能です。<br><br>
+		制作者：稲垣 有哉（yuya.ina56@gmail.com）
+	';
+}
+function create_pickup_title() {
+    $keyname = 'pickup_title';
+    global $post;
+    // 保存されているカスタムフィールドの値を取得
+    $get_value = get_post_meta( $post->ID, $keyname, true );
+ 
+    // nonceの追加
+    wp_nonce_field( 'action-' . $keyname, 'nonce-' . $keyname );
+ 
+	// HTMLの出力
+	echo '入力例： e-kagakuカリキュラム<br><br>';
+    echo '<input style="width:100%" name="' . $keyname . '" value="' . $get_value . '">';
+}
+function create_pickup_description() {
+    $keyname = 'pickup_description';
+    global $post;
+    // 保存されているカスタムフィールドの値を取得
+    $get_value = get_post_meta( $post->ID, $keyname, true );
+ 
+    // nonceの追加
+    wp_nonce_field( 'action-' . $keyname, 'nonce-' . $keyname );
+ 
+	// HTMLの出力
+	echo '入力例： ステップアップ型のカリキュラムでしっかり学習<br><br>';
+    echo '<input style="width:100%" name="' . $keyname . '" value="' . $get_value . '">';
+}
+function create_pickup_link() {
+    $keyname = 'pickup_link';
+    global $post;
+    // 保存されているカスタムフィールドの値を取得
+    $get_value = get_post_meta( $post->ID, $keyname, true );
+ 
+    // nonceの追加
+    wp_nonce_field( 'action-' . $keyname, 'nonce-' . $keyname );
+ 
+	// HTMLの出力
+	echo '入力例： https://google.com<br><br>';
+    echo '<input style="width:100%" name="' . $keyname . '" value="' . $get_value . '">';
+}
+function create_pickup_memo() {
+    $keyname = 'pickup_memo';
+    global $post;
+    // 保存されているカスタムフィールドの値を取得
+    $get_value = get_post_meta( $post->ID, $keyname, true );
+ 
+    // nonceの追加
+	wp_nonce_field( 'action-' . $keyname, 'nonce-' . $keyname );
+	
+	echo 'ここに入力した内容はHPには表示されません。メモなどにご活用ください。<br><br>';
+ 
+    // HTMLの出力
+    wp_editor( $get_value, $keyname . '-box', ['textarea_name' => $keyname] );
+}
+ 
+// カスタムフィールドの保存
+add_action( 'save_post', 'save_custom_field' );
+function save_custom_field( $post_id ) {
+    $custom_fields = ['pickup_title', 'pickup_description', 'pickup_link', 'pickup_memo'];
+ 
+    foreach( $custom_fields as $d ) {
+        if ( isset( $_POST['nonce-' . $d] ) && $_POST['nonce-' . $d] ) {
+            if( check_admin_referer( 'action-' . $d, 'nonce-' . $d ) ) {
+ 
+                if( isset( $_POST[$d] ) && $_POST[$d] ) {
+                    update_post_meta( $post_id, $d, $_POST[$d] );
+                } else {
+                    delete_post_meta( $post_id, $d, get_post_meta( $post_id, $d, true ) );
+                }
+            }
+        }
+ 
+    }
+}
 
 //3.my func
 //4.
