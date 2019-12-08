@@ -11,8 +11,8 @@
             </div>
             <div class="col-md-4">
                 <div style="padding:20px 0">
-                    <p style="padding:0; font-weight:bold;">京都事務局</p>
-                    <p>〒612-8086<br>京都府京都市伏見区京町北8丁目75－23</p>
+                    <p style="padding:0; font-weight:bold;">京都丹波橋事務局</p>
+                    <p>〒612-0074<br>京都府京都市伏見区桃山井伊掃部西町7番地 ハイツエイワB棟101</p>
                     <hr style="padding:0;">
                     <p style="padding:0; font-weight:bold;">研修事務所</p>
                     <p>〒150-0031<br>東京都渋谷区桜丘町11-9 セントラルハイツ102</p>
