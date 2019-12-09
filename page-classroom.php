@@ -70,7 +70,7 @@ get_header(); ?>
                             $today = Date("Ymd");
                             $oneweek = Date("Ymd", strtotime("-1 week"));
                             $week = array("日", "月", "火", "水", "木", "金", "土");
-                            $levels = array("Basic", "Advanced 1", "Advanced 2","Super Advanced 1", "Super Advanced 2", "Premiere Applied 1", "Premiere Applied 2", "Premiere Applied 3", "Premiere Applied 4", "Professional Basic(前期)", "Professional Basic(後期)","Professional Advanced1", "Professional Advanced2");
+                            $levels = array("Basic", "Advanced 1", "Advanced 2","Super Advanced 1", "Super Advanced 2", "Premiere Applied 1", "Premiere Applied 2", "Premiere Applied 3", "Premiere Applied 4", "Professional Basic(前期)", "Professional Basic(後期)","Professional Advanced1", "Professional Advanced2", "Professional VBA");
                             ?>
                         <?php if( get_field('class_select') ) : ?>
                             <?php $check = get_field('class_select');
