@@ -18,7 +18,7 @@ Template Name: HD, HOME
         <!-- bootstrap 4.1.3 -->
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>css/bootstrap-4.1.3-dist/css/bootstrap.min.css">
         <!-- header.css -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20191218" type="text/css" >
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200101" type="text/css" >
         <!-- top-page.css -->
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css" type="text/css">
         <!-- fontawsome -->

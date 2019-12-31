@@ -64,8 +64,8 @@ header{width:100%; position:relative; background-color:#ffffff; z-index:20;}
 
 @media screen and (min-width: 1050px) {
     .top-slider{width:100%; margin:30px 0;}
-    .top-slider .contents{height:450px; width:1050px; position:relative;}
-    .top-slider .contents_img{height:450px; width:90%; margin:0 auto; background-size:cover; border-radius: 20px;}
+    .top-slider .contents{height:350px; width:750px; position:relative;}
+    .top-slider .contents_img{height:350px; width:90%; margin:0 auto; background-size:cover; border-radius: 20px;}
     .top-slider-margin{width:100%; height:20px;}
     .top-slider .text{position:absolute; bottom:20px; left:3%;}
     .top-slider .text_large span{color:#ffffff;font-size:40px; padding:5px;}
