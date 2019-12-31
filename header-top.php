@@ -48,7 +48,6 @@ Template Name: HD, HOME
 <body>
     <!-- <div class="container"> -->
     <header>
-        <div class="header_cover"></div> <!-- ヘッダーカバー（青い斜め） -->
         <!-- PC用ヘッダーメニュー -->
         <div class="header_pc">
             <div class="top_info">
@@ -113,8 +112,13 @@ Template Name: HD, HOME
             <!-- //メニュー本体 -->
         </div>
         <!-- //モバイル用ヘッダーメニュー -->
+
+        <!-- 正月用特設 -->
+        <?php get_template_part('template/hello2020'); ?>
+        <!-- 正月用特設 -->
         
         <!-- トップページメインスライダー -->
+        <!-- <div class="header_cover"></div> -->
         <?php get_template_part('template/top-slider'); ?>
         <!-- //トップページメインスライダー -->
         

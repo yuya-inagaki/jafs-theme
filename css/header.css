@@ -2,7 +2,7 @@ header{width:100%; position:relative; background-color:#ffffff; z-index:20;}
 
 
 /* ヘッダー背景ななめ */
-.header_cover{-webkit-clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%); clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%); background: #9cd5ff; height:400px; width:100%; position:absolute; bottom:0px; left:0; z-index:-1;}
+.header_cover{-webkit-clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%); clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%); background: #9cd5ff; height:400px; width:100%; position:absolute; bottom:0px; left:0; z-index:0;}
 
 /* ヘッダーメニュー */
 .top_news{width:100%; background-color:#ffaf2f; padding:10px 0px; margin:0;}
