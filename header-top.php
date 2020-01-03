@@ -115,7 +115,7 @@ Template Name: HD, HOME
 
         <?php 
             $today = date("Y/m/d");
-            $target_day = "2020/01/03";
+            $target_day = "2020/01/05";
         ?>
         <!-- 正月用特設 -->
         <?php 
