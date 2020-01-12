@@ -97,7 +97,7 @@ get_header('top'); ?>
             <div class="col-sm-6 col-md-4">
                 <a href="https://e-kagaku.com/index/shcool-top/">
                     <div class="box">
-                        <img src="<?php bloginfo('template_url'); ?>/img/toppage/03.png">
+                        <img src="<?php bloginfo('template_url'); ?>/img/toppage/03.jpg">
                         <p>学校・塾関係者の方へ</p>
                     </div>
                 </a>
@@ -105,7 +105,7 @@ get_header('top'); ?>
             <div class="col-sm-6 col-md-4">
                 <a href="http://e-kagaku.com/activities/">
                     <div class="box">
-                        <img src="<?php bloginfo('template_url'); ?>/img/toppage/04.png">
+                        <img src="<?php bloginfo('template_url'); ?>/img/toppage/04.jpg">
                         <p>活動実績</p>
                     </div>
                 </a>
