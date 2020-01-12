@@ -6,7 +6,7 @@
 <div id="message2020">
   <div class="container">
     <span class="main-title">SPECIAL MESSAGE</span>
-    <span class="sub-title"><i class="fas fa-star"></i>01. 成層圏データ分析チームを1月4日より募集開始致します</span>
+    <span class="sub-title"><i class="fas fa-star"></i>01. 成層圏データ分析チームを募集開始致します</span>
     <soan class="message">観測機作成チームに参加した者、Pro VBAを修得した者、代表が参加に値すると判断した者を対象に5月のMATLAB EXPOでプロの研究者の前でプレゼンする機会やAO入試や海外留学申請の際のエビデンスにできる機会を提供いたします。</span>
     <span class="sub-title"><i class="fas fa-star"></i>02. 「ロボット研究室」から「e-kagaku アカデミー」と名称を変更致します</span>
     <soan class="message">現在の講座にAIやデータサイエンスの内容を盛り込む事で諸外国のSTEAM教育に匹敵する科目連携型教育を行い、ジュニア時代から企業でのインターンを可能に致します。さらに大学生と競えるチャレンジコースも新設致します。詳細は4日に発表予定です。</span>
@@ -18,7 +18,6 @@
 </div>
 
 <style type="text/css">
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese');
 
   #message2020 {
     width: 100%;

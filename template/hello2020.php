@@ -6,8 +6,8 @@
 
 <div id="hello2020">
   <div class="deco01"></div>
-  <div class="text-center">
-    <img src="<?php bloginfo('template_url'); ?>/img/toppage/hello2020/e-kagaku_nenga.jpg" style="width:100%; max-width:800px;" alt="あけましておめでとうございます">
+  <div style="padding: 20px 10px;">
+    <p style="font-size: 24px; font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">小・中学生が宇宙探査に成功！<br>ドローンも潜水艦もデザインも、科学研究からAO入試も全てチャレンジできます</p>
   </div>
   <div class="text-center">
     <span class="main-title">OUR CHALLENGE</span>
@@ -52,6 +52,7 @@
 
 <style type="text/css">
   @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese');
   #hello2020 {
     width: 100%;
     background: white;

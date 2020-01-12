@@ -113,30 +113,15 @@ Template Name: HD, HOME
         </div>
         <!-- //モバイル用ヘッダーメニュー -->
 
-        <?php 
-            $today = date("Y/m/d");
-            $target_day = "2020/01/05";
-        ?>
-        <!-- 正月用特設 -->
-        <?php 
-            if(strtotime($today) <= strtotime($target_day)){
-                get_template_part('template/hello2020');
-            }
-        ?>
-        <!-- 正月用特設 -->
+        
+        <?php get_template_part('template/hello2020'); ?>
         
         <!-- トップページメインスライダー -->
         <!-- <div class="header_cover"></div> -->
         <?php get_template_part('template/top-slider'); ?>
         <!-- //トップページメインスライダー -->
 
-        <!-- 正月用特設 -->
-        <?php 
-            if(strtotime($today) <= strtotime($target_day)){
-                get_template_part('template/message2020');
-            }
-        ?>
-        <!-- 正月用特設 -->
+        <?php get_template_part('template/message2020'); ?>
         
         <!-- トップページ最重要ニュース -->
         <div class="top_news">
