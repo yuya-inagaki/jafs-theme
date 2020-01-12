@@ -6,8 +6,10 @@
 
 <div id="hello2020">
   <div class="deco01"></div>
-  <div style="padding: 20px 10px;">
-    <p style="font-size: 24px; font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">小・中学生が宇宙探査に成功！<br>ドローンも潜水艦もデザインも、科学研究からAO入試も全てチャレンジできます</p>
+  <div class="container">
+    <div style="padding: 20px 10px;">
+      <p style="font-size: 18px; line-height:25px; font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">小・中学生が宇宙探査に成功！<br>ドローンも潜水艦もデザインも、科学研究からAO入試も全てチャレンジできます</p>
+    </div>
   </div>
   <div class="text-center">
     <span class="main-title">OUR CHALLENGE</span>
