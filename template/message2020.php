@@ -17,8 +17,8 @@
   </div>
   <div style="margin:10px 0;">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-sm-6 offset-sm-3">
+        <div style="margin: 0 auto;">
+            <div style="width:600px; max-width: 100%; margin: 0 auto;">
                 <a target="_blank" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img width="100%" src="<?php echo get_template_directory_uri(); ?>/img/toppage/banner_info.jpg"></a>
             </div>
         </div>
