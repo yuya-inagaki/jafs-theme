@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
-                <a taget="_blank" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img width="100%" src="<?php echo get_template_directory_uri(); ?>/imag/toppage/banner_info.jpg"></a>
+                <a taget="_blank" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img width="100%" src="<?php echo get_template_directory_uri(); ?>/img/toppage/banner_info.jpg"></a>
             </div>
         </div>
     </div>
