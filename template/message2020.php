@@ -9,12 +9,21 @@
     <span class="sub-title"><i class="fas fa-star"></i>01. 成層圏データ分析チームを募集開始致します</span>
     <soan class="message">観測機作成チームに参加した者、Pro VBAを修得した者、代表が参加に値すると判断した者を対象に5月のMATLAB EXPOでプロの研究者の前でプレゼンする機会やAO入試や海外留学申請の際のエビデンスにできる機会を提供いたします。</span>
     <span class="sub-title"><i class="fas fa-star"></i>02. 「ロボット研究室」から「e-kagaku アカデミー」と名称を変更致します</span>
-    <soan class="message">現在の講座にAIやデータサイエンスの内容を盛り込む事で諸外国のSTEAM教育に匹敵する科目連携型教育を行い、ジュニア時代から企業でのインターンを可能に致します。さらに大学生と競えるチャレンジコースも新設致します。詳細は4日に発表予定です。</span>
+    <soan class="message">現在の講座にAIやデータサイエンスの内容を盛り込む事で諸外国のSTEAM教育に匹敵する科目連携型教育を行い、ジュニア時代から企業でのインターンを可能に致します。さらに大学生と競えるチャレンジコースも新設致します。</span>
     <span class="sub-title"><i class="fas fa-star"></i>03. 教師向け、大人向けICT教育を拡大</span>
-    <soan class="message">現在17都道府県49名の教員に指導者向けプログラミング講座を実施しており、社会人の方の地域指導者を募集します。詳細は4日発表予定です。</span>
+    <soan class="message">現在17都道府県49名の教員に指導者向けプログラミング講座を実施しており、社会人の方の地域指導者を募集します。</span>
     <span class="sub-title"><i class="fas fa-star"></i>04. 小学1，2年生向けのキッズコースを新設</span>
     <soan class="message">新たに小学生1年・２年生向けの新コースを設立予定です。また、飛び級制度も設けます。</span>
   </div>
+  <div style="margin:10px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <a taget="_blank" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img width="100%" src="<?php echo get_template_directory_uri(); ?>/imag/toppage/banner_info.jpg"></a>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <style type="text/css">

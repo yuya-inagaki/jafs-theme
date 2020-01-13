@@ -19,7 +19,7 @@
       <div class="col-md-4">
         <div class="box">
           <span class="sub-title"><i class="fas fa-star"></i> Message 01.</span>
-          <span class="title">他ではできない本物のチャレンジ！</span>
+          <span class="title">他ではできない本物のチャレンジ！<br>すべての世代を活性化させる e-kagakuメソッド</span>
           <div style="padding: 10px 10px 0;">
             <img class="catch-icon" src="<?php bloginfo('template_url'); ?>/img/toppage/hello2020/01-01.jpg">
             <img class="catch-icon" src="<?php bloginfo('template_url'); ?>/img/toppage/hello2020/01-02.jpg">
