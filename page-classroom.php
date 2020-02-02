@@ -341,7 +341,7 @@ get_header(); ?>
                         <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
                         <a href="https://goo.gl/forms/Giep7GXh9EdCGt9I3" target="_blank" class="btn_apply btn_apply_new">会員お申込みはこちら</a>
                         <?php elseif($basic_count!=0 && $class_count==0): ?>
-                        <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
+                        <p>Beginnerコース・Basicコースを始めて受講される方は会員登録をお願い致します。</p>
                         <a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply btn_apply_new">初めて受講の方はこちら</a>
                         <?php else: ?>
                         <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
