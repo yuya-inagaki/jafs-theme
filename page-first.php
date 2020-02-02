@@ -23,7 +23,7 @@ get_header(); ?>
 
                         <div class="post-content first_main">
                             
-                            <h2>現在Basicコース募集中教室一覧</h2>
+                            <h2>現在Beginner・Basicコース募集中教室一覧</h2>
                             <div class="row">
                             <?php
                             $basic_count=0;//Basicの数
@@ -45,7 +45,7 @@ get_header(); ?>
                             foreach($children as $child){
                                 $check = get_post_meta($child->ID, "class_select", true);
                                 foreach ( (array)$check as $value ) {
-                                    if($value=='class01' && get_post_meta($child->ID, "class01_name", true)=='Basic') {
+                                    if($value=='class01' && ( get_post_meta($child->ID, "class01_name", true)=='Basic' || get_post_meta($child->ID, "class01_name", true)=='Beginner')) {
                                         $limit_day=get_post_meta($child->ID, "class01_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
@@ -57,7 +57,7 @@ get_header(); ?>
                                             echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class01_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class01_time", true).'</p></div></a></div>');
                                         }
                                         
-                                    }elseif($value=='class02' && get_post_meta($child->ID, "class02_name", true)=='Basic') {
+                                    }elseif($value=='class02' && (get_post_meta($child->ID, "class02_name", true)=='Basic' || get_post_meta($child->ID, "class02_name", true)=='Beginner') ) {
                                         $limit_day=get_post_meta($child->ID, "class02_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
@@ -68,7 +68,7 @@ get_header(); ?>
                                             echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
                                             echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class02_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class02_time", true).'</p></div></a></div>');
                                         }
-                                    }elseif($value=='class03' && get_post_meta($child->ID, "class03_name", true)=='Basic') {
+                                    }elseif($value=='class03' && (get_post_meta($child->ID, "class03_name", true)=='Basic' || get_post_meta($child->ID, "class03_name", true)=='Beginner')) {
                                         $limit_day=get_post_meta($child->ID, "class03_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
@@ -79,7 +79,7 @@ get_header(); ?>
                                             echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
                                             echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class03_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class03_time", true).'</p></div></a></div>');
                                         }
-                                    }elseif($value=='class04' && get_post_meta($child->ID, "class04_name", true)=='Basic') {
+                                    }elseif($value=='class04' && (get_post_meta($child->ID, "class04_name", true)=='Basic' || get_post_meta($child->ID, "class04_name", true)=='Beginner')) {
                                         $limit_day=get_post_meta($child->ID, "class04_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
@@ -90,7 +90,7 @@ get_header(); ?>
                                             echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
                                             echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class04_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class04_time", true).'</p></div></a></div>');
                                         }
-                                    }elseif($value=='class05' && get_post_meta($child->ID, "class05_name", true)=='Basic') {
+                                    }elseif($value=='class05' && (get_post_meta($child->ID, "class05_name", true)=='Basic' || get_post_meta($child->ID, "class05_name", true)=='Beginner')) {
                                         $limit_day=get_post_meta($child->ID, "class05_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
