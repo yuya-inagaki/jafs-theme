@@ -111,7 +111,7 @@ get_header(); ?>
                                         <p><?php the_field('class01_time'); ?></p>
                                         <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
                                         <p><?php the_field('class01_cost'); ?></p>
-                                        <?php if(get_field('class01_name')=='Basic') : $basic_count++; ?>
+                                        <?php if(get_field('class01_name')=='Basic' || get_field('class01_name')=='Beginner') : $basic_count++; ?>
                                             <div class="text-center"><a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
                                         <?php else: $class_count++;  endif; ?>
                                     </div>
@@ -135,7 +135,7 @@ get_header(); ?>
                                         <p><?php the_field('class02_time'); ?></p>
                                         <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
                                         <p><?php the_field('class02_cost'); ?></p>
-                                        <?php if(get_field('class02_name')=='Basic') : $basic_count++; ?>
+                                        <?php if(get_field('class02_name')=='Basic' || get_field('class02_name')=='Beginner') : $basic_count++; ?>
                                             <div class="text-center"><a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
                                         <?php else: $class_count++; endif; ?>
                                     </div>
@@ -159,7 +159,7 @@ get_header(); ?>
                                         <p><?php the_field('class03_time'); ?></p>
                                         <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
                                         <p><?php the_field('class03_cost'); ?></p>
-                                        <?php if(get_field('class03_name')=='Basic') : $basic_count++; ?>
+                                        <?php if(get_field('class03_name')=='Basic'|| get_field('class03_name')=='Beginner') : $basic_count++; ?>
                                             <div class="text-center"><a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
                                         <?php else: $class_count++; endif; ?>
                                     </div>
@@ -183,7 +183,7 @@ get_header(); ?>
                                         <p><?php the_field('class04_time'); ?></p>
                                         <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
                                         <p><?php the_field('class04_cost'); ?></p>
-                                        <?php if(get_field('class04_name')=='Basic') : $basic_count++; ?>
+                                        <?php if(get_field('class04_name')=='Basic' || get_field('class04_name')=='Beginner') : $basic_count++; ?>
                                             <div class="text-center"><a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
                                         <?php else: $class_count++; endif; ?>
                                     </div>
@@ -207,7 +207,7 @@ get_header(); ?>
                                         <p><?php the_field('class05_time'); ?></p>
                                         <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
                                         <p><?php the_field('class05_cost'); ?></p>
-                                        <?php if(get_field('class05_name')=='Basic') : $basic_count++; ?>
+                                        <?php if(get_field('class05_name')=='Basic' || get_field('class05_name')=='Beginner') : $basic_count++; ?>
                                             <div class="text-center"><a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
                                         <?php else: $class_count++; endif; ?>
                                     </div>
