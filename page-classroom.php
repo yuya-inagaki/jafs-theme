@@ -344,7 +344,7 @@ get_header(); ?>
                         <p>Beginnerコース・Basicコースを始めて受講される方は会員登録をお願い致します。</p>
                         <a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply btn_apply_new">初めて受講の方はこちら</a>
                         <?php else: ?>
-                        <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
+                        <p>Beginnerコース・Basicコースを始めて受講される方は会員登録をお願い致します。</p>
                         <a href="http://e-kagaku.com/top_general/member_apply/" target="_blank" class="btn_apply btn_apply_new">初めて受講の方はこちら</a><br>
                         
                         
