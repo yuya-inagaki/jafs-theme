@@ -16,7 +16,7 @@ Template Name: HD, HOME
     <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap4/bootstrap-grid.min.css">
     <!-- header.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214" type="text/css" >
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-1" type="text/css" >
     <!-- top-page.css -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214" type="text/css">
     <!-- fontawsome -->
@@ -54,8 +54,7 @@ Template Name: HD, HOME
 <body>
   <header>
     <div id="header">
-      <!-- PC用ヘッダーメニュー -->
-      <div class="header-box">
+      <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
         <a href="<?php echo home_url() ?>">
           <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
         </a>

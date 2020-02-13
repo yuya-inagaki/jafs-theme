@@ -20,7 +20,7 @@
         <!-- bootstrap 4.1.3 -->
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>css/bootstrap-4.1.3-dist/css/bootstrap.min.css">
         <!-- header.css -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214" type="text/css">
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-1" type="text/css">
         <!-- classroom.css -->
         <?php if ( is_page_template( 'page-classroom.php' ) || is_page_template( 'page-classroom2.php' ) || is_page_template( 'page-place.php' ) ||  is_page_template( 'page-first.php' ) ) { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
@@ -65,8 +65,7 @@
     <?php if ( !is_page_template( 'page-slabo.php' ) ) : //サイエンスラボのページのみ非表示  ?>
     <header>
       <div id="header">
-        <!-- PC用ヘッダーメニュー -->
-        <div class="header-box">
+        <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
           <a href="<?php echo home_url() ?>">
             <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
           </a>

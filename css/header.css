@@ -122,6 +122,11 @@ header #header{
   background: #ffffff;
   box-shadow: 0 0 20px rgba(0,0,0,.1);
   display: flex;
+  transition:all 0.3s;
+}
+
+#header .header-box.hidemenu {
+  transform: translateY(-80px);
 }
 
 #header .header-box .pc-only .menu-box {

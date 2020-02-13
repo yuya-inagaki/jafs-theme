@@ -1,7 +1,7 @@
 /**
-* 会社概要専用スクリプト
+* 共通Script
 */
-const borderPcMobile = 750;
+const borderPcMobile = 875;
 const showGoTopBtn = 800;
 
 document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み込み終わってから実行
@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み�
     data: {
       width: 0,
       height: 0,
+      scrollY: 0,
       smMenuActive: false,
+      pcMenuActive: true,
     },
     methods: {
       triggerSmMenu() {
@@ -26,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み�
         this.height = window.innerHeight;
       },
       handleScroll() {
+        if (this.scrollY > window.scrollY) {
+          this.pcMenuActive = true;
+        } else {
+          this.pcMenuActive = false;
+        }
+        this.scrollY = window.scrollY;
       },
     },
     computed: {
