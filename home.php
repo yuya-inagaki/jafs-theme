@@ -151,22 +151,22 @@ get_header('top'); ?>
     </div>
 </div>
 <div id="top-sns" class="hidden-md hidden-lg"  style="padding-top:30px; padding-bottom:30px;">
-    <div class="container top-sns-sm">
-        <div class="row">
-            <a href="https://www.facebook.com/e.kagaku/" target="_blank">
-                <div class="col-xs-6 text-center">
-                    <img src="<?php bloginfo('template_url'); ?>/img/icon/facebook.png">
-                    <span class="sns-btn">Facebook</span>
-                </div>
-            </a>
-            <a href="https://twitter.com/jafs008" target="_blank">
-                <div class="col-xs-6 text-center box-center">
-                    <img src="<?php bloginfo('template_url'); ?>/img/icon/twitter.png">
-                    <span class="sns-btn">Twitter</span>
-                </div>
-            </a>
-        </div>
+  <div class="container top-sns-sm">
+    <div class="row">
+      <div class="col-xs-6 text-center">
+        <a href="https://www.facebook.com/e.kagaku/" target="_blank">
+          <img src="<?php bloginfo('template_url'); ?>/img/icon/facebook.png">
+          <span class="sns-btn">Facebook</span>
+        </a>
+      </div>
+      <div class="col-xs-6 text-center box-center">
+        <a href="https://twitter.com/jafs008" target="_blank">
+          <img src="<?php bloginfo('template_url'); ?>/img/icon/twitter.png">
+          <span class="sns-btn">Twitter</span>
+        </a>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Facebook用のJavascript -->
 <div id="fb-root"></div>

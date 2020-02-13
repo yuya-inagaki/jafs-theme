@@ -101,3 +101,213 @@ header{width:100%; position:relative; background-color:#ffffff; z-index:20;}
 .top_agse:hover{background-color:#9bbaff;}
 /* //協会リンク */
 
+/* ヘッダー */
+header #header{
+  position: static;
+  position: fixed;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px;
+  z-index: 1;
+  top:0;
+}
+
+#header .header-box {
+  width: 100%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+  display: flex;
+}
+
+#header .header-box .pc-only .menu-box {
+  margin-right: 50px;
+}
+
+#header .header-box .pc-only .menu-box ul.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  margin-bottom: 0;
+}
+
+#header .header-box .pc-only .menu-box li.menu-item {
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0 20px;
+  color: black;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  list-style: none;
+}
+
+#header .header-box .pc-only .menu-box li.menu-item a {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+
+#header .header-box .logo {
+  height: 40px;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+#header .sm-menu-box {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%),
+  url(../img/background/space-ballon.jpg) center / cover ;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transform: translateX(100vw);
+  transition: all 0.5s;
+}
+
+#header .sm-menu-box.active {
+  transform: translateX(0vw);
+}
+
+#header .sm-menu-box-inner {
+  width: 100%;
+  max-height: 100%;
+  overflow: scroll;
+  padding: 100px 20px 20px;
+  color: white;
+  text-align: left;
+}
+
+#header .sm-menu-box-inner h2.title {
+  color: white;
+  border-left: none;
+}
+
+#header .sm-menu-box-inner ul.menu {
+  padding: 15px 0;
+  margin-bottom: 0;
+}
+
+#header .sm-menu-box-inner li.menu-item {
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  list-style: none;
+}
+
+#header .sm-menu-box-inner li.menu-item a {
+  border-top: none;
+  color: white;
+}
+
+#header .sm-menu-box-inner a.btn-img {
+  padding: 10px;
+}
+
+#header .sm-menu-box-inner a.btn-img img {
+  width: 100%;
+  margin: 0px;
+}
+
+/* ヘッダーメニューボタン */
+#header .header-box .sm-only .menu-btn {
+  background: #dadada;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
+  margin-top: 5px;
+  margin-right: 5px;
+  z-index: 1;
+  transition: all .4s;
+}
+
+#header .header-box .sm-only .menu-btn .btn-trigger,
+#header .header-box .sm-only .menu-btn .btn-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+#header .header-box .sm-only .menu-btn .btn-trigger {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+#header .header-box .sm-only .menu-btn .btn-trigger span {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 100%;
+  height: 6px;
+  background-color: #3f3f3f;
+  border-radius: 4px;
+}
+
+#header .header-box .sm-only .menu-btn.active {
+  background: #258bff;
+}
+
+#header .header-box .sm-only .menu-btn.active .btn-trigger span {
+  background-color: #ffffff;
+}
+
+#header .header-box .sm-only .menu-btn .btn-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+#header .header-box .sm-only .menu-btn .btn-trigger span:nth-of-type(2) {
+  top: 14px;
+}
+
+#header .header-box .sm-only .menu-btn.active .btn-trigger span:nth-of-type(1) {
+  -webkit-transform: translateY(10px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+}
+
+#header .header-box .sm-only .menu-btn.active .btn-trigger span:nth-of-type(2) {
+  -webkit-transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-7px) rotate(45deg);
+}
+
+
+/* フレックスボックス関連のスタイル */
+.f-right {
+  margin-left: auto;
+}
+
+.f-left {
+  margin-right: auto;
+}
+
+/* media size setting */
+@media only screen and (min-width: 875px) {
+  .pc-only {
+    display: inline-block;
+  }
+
+  .sm-only {
+    display: none;
+  }
+}
+@media only screen and (max-width: 874px) {
+  .pc-only {
+    display: none;
+  }
+
+  .sm-only {
+    display: inline-block;
+  }
+}

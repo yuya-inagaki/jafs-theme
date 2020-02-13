@@ -11,12 +11,12 @@
       <p style="font-size: 18px; line-height:25px; font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">小・中学生が宇宙探査に成功！<br>ドローンも潜水艦もデザインも、科学研究からAO入試も全てチャレンジできます</p>
     </div>
   </div>
-  <div class="text-center">
+  <div class="text-center" style="padding-bottom: 20px;">
     <span class="main-title">OUR CHALLENGE</span>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" style="padding-bottom: 20px;">
         <div class="box">
           <span class="sub-title"><i class="fas fa-star"></i> Message 01.</span>
           <span class="title">他ではできない本物のチャレンジ！<br>すべての世代を活性化させる e-kagakuメソッド</span>
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" style="padding-bottom: 20px;">
         <div class="box">
           <span class="sub-title"><i class="fas fa-star"></i> Message 02.</span>
           <span class="title">プログラミングからAIとデータサイエンスへ！</span>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" style="padding-bottom: 20px;">
         <div class="box">
           <span class="sub-title"><i class="fas fa-star"></i> Message 03.</span>
           <span class="title">すべての世代がどこでもICTにチャレンジ！</span>
@@ -71,7 +71,6 @@
   #hello2020 .box {
     width: 100%;
     padding: 20px;
-    margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,.1);
     height: 100%;

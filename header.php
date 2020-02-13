@@ -26,22 +26,25 @@
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
         <?php } ?>
         <!-- fontawsome -->
-        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/solid.css">
         <!-- Googleのフォント？ -->
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
         
-        <!-- スライダーSlickのCSS -->
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/slick/slick.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/slick/slick-theme.css" type="text/css" />
-        
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <!-- Vue.js -->
+        <?php $url = esc_url( home_url() ); if(strstr($url,'ekagaku.local')==true): ?>
+          <script src="<?php echo get_template_directory_uri(); ?>/js/vue/vue.js"></script>
+        <?php else: ?>
+          <script src="<?php echo get_template_directory_uri(); ?>/js/vue/vue.min.js"></script>
+        <?php endif; ?>
         
         <!-- JavaScript読み込み -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/slick/slick.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main_func.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
         <!-- //JavaScript読み込み -->
         
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri() ?>">
@@ -61,71 +64,46 @@
 <body>
     <?php if ( !is_page_template( 'page-slabo.php' ) ) : //サイエンスラボのページのみ非表示  ?>
     <header>
+      <div id="header">
         <!-- PC用ヘッダーメニュー -->
-        <div class="header_pc">
-            <div class="top_info">
-                <div class="container">
-                    <!-- ヘッダーロゴ -->
-                    <?php $header_image = get_header_image();
-                    if (!empty($header_image)) : ?>
-                        <a href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>"></a>
-                    <?php else: ?>
-                        <a href="<?php echo home_url('/'); ?>"><img class="header_logo" src="<?php bloginfo('template_url'); ?>/img/JAFS-see.png" alt="JAFS logo"></a>
-                    <?php endif; ?>
-                    <!-- //ヘッダーロゴ -->
-                    <a class="top_most_important" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" max-width="190px" width="100%" alt="情報配信登録"></a>
-                    <a class="top_most_important" href="http://global-science.or.jp/robo/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" max-width="190px" width="100%" alt="体験教室"></a>
-                    <a class="top_most_important_sns facebook" href="https://www.facebook.com/e.kagaku/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="top_most_important_sns twitter" href="https://twitter.com/jafs008" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a class="top_most_important_sns youtube" href="https://www.youtube.com/channel/UCajOFzv2Z-V_1WClnuoCnRA" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
-                </div>
+        <div class="header-box">
+          <a href="<?php echo home_url() ?>">
+            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
+          </a>
+          <!-- pc only menu -->
+          <div class="pc-only f-right">
+            <div class="menu-box">
+              <!-- メニューの表示 -->
+              <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
             </div>
-            <nav class="top-nav">
-                <div class="container">
-                    <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
-                </div>
-            </nav>
+          </div>
+          <!-- sm only menu -->
+          <div class="sm-only f-right">
+            <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
+              <div class="btn-trigger">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- //PC用ヘッダーメニュー -->
-        <!-- モバイル用ヘッダーメニュー -->
-        <div class="header_mobile">
-            <div class="header_cover_mobile"></div> <!-- ヘッダーカバー（青い斜め） -->
-            <div class="container">
-                <!-- ヘッダーロゴ -->
-                <?php $header_image = get_header_image();
-                if (!empty($header_image)) : ?>
-                    <a href="<?php echo home_url(); ?>"><img class="header_logo" src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>"></a>
-                <?php else: ?>
-                    <a href="<?php echo home_url('/'); ?>"><img class="header_logo" src="<?php bloginfo('template_url'); ?>/img/JAFS-see.png" alt="JAFS logo"></a>
-                <?php endif; ?>
-                <!-- //ヘッダーロゴ -->
-                <!-- ハンバーガーメニュー -->
-                <a class="menu-trigger" href="#">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+        <!-- sm/tablet menu -->
+        <div class="sm-menu-box" :class="{ active: smMenuActive }">
+          <div class="sm-menu-box-inner">
+            <h2 class="title">Menu</h2>
+            <!-- メニューの表示 -->
+            <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            <div style="display: flex;">
+                <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
                 </a>
-                <!-- //ハンバーガーメニュー -->
+                <a class="btn-img" href="http://global-science.or.jp/robo/" target="_blank">
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" alt="体験教室">
+                </a>
             </div>
-            <!-- メニュー本体 -->
-            <div id="mobile_menu">
-                <div class="container">
-                    <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
-                    <div class="sns_icon">
-                        <a class="top_most_important_sns facebook" href="https://www.facebook.com/e.kagaku/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="top_most_important_sns twitter" href="https://twitter.com/jafs008" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a class="top_most_important_sns youtube" href="https://www.youtube.com/channel/UCajOFzv2Z-V_1WClnuoCnRA" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a class="top_most_important" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" max-width="190px" width="100%" alt="情報配信登録"></a>
-                    <a class="top_most_important" href="http://global-science.or.jp/robo/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" max-width="190px" width="100%" alt="体験教室"></a>
-                </div>
-            </div>
-            <!-- //メニュー本体 -->
+          </div>
         </div>
-        <!-- //モバイル用ヘッダーメニュー -->
-
+      </div>
     </header>
     <?php endif; //サイエンスラボのページのみ非表示 ?>
     <div class="container">

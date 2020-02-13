@@ -1,7 +1,7 @@
 <?php if(!is_home()): ?>
 </div>
 <?php endif; ?>
-<div class="container footer"  style="background-color:#242424; color:white;">
+<div class="footer"  style="background-color:#242424; color:white;">
     
     <footer class="container">
         <div class="row">
