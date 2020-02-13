@@ -102,6 +102,10 @@ header{width:100%; position:relative; background-color:#ffffff; z-index:20;}
 /* //協会リンク */
 
 /* ヘッダー */
+header {
+  margin-bottom: 80px;
+}
+
 header #header{
   position: static;
   position: fixed;
@@ -138,13 +142,12 @@ header #header{
   padding: 0;
   margin: 0 20px;
   color: black;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
   list-style: none;
 }
 
 #header .header-box .pc-only .menu-box li.menu-item a {
   text-decoration: none;
+  font-weight: 700;
   color: #3b3b3b;
 }
 
