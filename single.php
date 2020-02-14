@@ -1,6 +1,7 @@
 <?php /* Template Name: SINGLE, 通常の投稿 */
 get_header(); ?>
     <article>
+      <div class="container">
         <?php
         if (have_posts()) :
             while (have_posts()) :
@@ -26,5 +27,6 @@ get_header(); ?>
             <?php
         endif;
         ?>
+      </div>
     </article>
 <?php get_footer(); ?>

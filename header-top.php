@@ -18,9 +18,9 @@ Template Name: HD, HOME
     <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap4/bootstrap-grid.min.css">
     <!-- header.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-3" type="text/css" >
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-4" type="text/css" >
     <!-- top-page.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214-2" type="text/css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214-4" type="text/css">
     <!-- fontawsome -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
@@ -52,67 +52,68 @@ Template Name: HD, HOME
 <body>
   <header>
     <div id="header">
-      <div class="header-box-wrapper">
-        <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
-          <a href="<?php echo home_url() ?>">
-            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
-          </a>
-          <!-- pc only menu -->
-          <div class="pc-only f-right">
-            <div class="menu-box">
-              <!-- メニューの表示 -->
-              <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+        <div class="header-box-wrapper" :class="{ hidemenu: !pcMenuActive && isPc }">
+          <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
+            <a href="<?php echo home_url() ?>">
+              <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
+            </a>
+            <!-- pc only menu -->
+            <div class="pc-only f-right">
+              <div class="menu-box">
+                <!-- メニューの表示 -->
+                <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
+              </div>
             </div>
-          </div>
-          <!-- sm only menu -->
-          <div class="sm-only f-right">
-            <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
-              <div class="btn-trigger">
-                <span></span>
-                <span></span>
+            <!-- sm only menu -->
+            <div class="sm-only f-right">
+              <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
+                <div class="btn-trigger">
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <!-- sm/tablet menu -->
         <div class="sm-menu-box" :class="{ active: smMenuActive }">
-          <div class="sm-menu-box-inner">
-            <div class="sm-global-menu">
-              <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
-            </div>
-            <div style="display: flex;">
-                <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
-                  <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
-                </a>
-                <a class="btn-img" href="http://global-science.or.jp/robo/" target="_blank">
-                  <img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" alt="体験教室">
-                </a>
-            </div>
+        <div class="sm-menu-box-inner">
+          <!-- メニューの表示 -->
+          <div class="sm-global-menu">
+          <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
+          </div>
+          <div style="display: flex;">
+            <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
+              <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
+            </a>
+            <a class="btn-img" href="http://global-science.or.jp/robo/" target="_blank">
+              <img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" alt="体験教室">
+            </a>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-    <?php get_template_part('template/hello2020'); ?>
-    <!-- トップページメインスライダー -->
-    <?php get_template_part('template/top-slider'); ?>
-    <!-- //トップページメインスライダー -->
-    <?php get_template_part('template/message2020'); ?>
-    
-    <!-- トップページ最重要ニュース -->
-    <div class="top_news">
-      <div class="container">
-        <?php if($news_title=get_option('topnews_title')): ?>
-          <?php if($news_url=get_option('topnews_url')): ?>
-          <div class="oshirase"><div class="oshirase-left">お知らせ</div><div class="oshirase-right"><a href="<?php echo $news_url; ?>" target="_blank"><?php echo $news_title; ?></a></div><div class="oshirase-bottom"></div></div>
-          <?php else: ?>
-          <div class="oshirase"><div class="oshirase-left">お知らせ</div><div class="oshirase-right"><?php echo $news_title; ?></div><div class="oshirase-bottom"></div></div>
-          <?php endif; ?>
+  <?php get_template_part('template/hello2020'); ?>
+  <!-- トップページメインスライダー -->
+  <?php get_template_part('template/top-slider'); ?>
+  <!-- //トップページメインスライダー -->
+  <?php get_template_part('template/message2020'); ?>
+  
+  <!-- トップページ最重要ニュース -->
+  <div class="top_news">
+    <div class="container">
+      <?php if($news_title=get_option('topnews_title')): ?>
+        <?php if($news_url=get_option('topnews_url')): ?>
+        <div class="oshirase"><div class="oshirase-left">お知らせ</div><div class="oshirase-right"><a href="<?php echo $news_url; ?>" target="_blank"><?php echo $news_title; ?></a></div><div class="oshirase-bottom"></div></div>
+        <?php else: ?>
+        <div class="oshirase"><div class="oshirase-left">お知らせ</div><div class="oshirase-right"><?php echo $news_title; ?></div><div class="oshirase-bottom"></div></div>
         <?php endif; ?>
-      </div>
+      <?php endif; ?>
     </div>
-    <!-- //トップページ最重要ニュース -->
+  </div>
+  <!-- //トップページ最重要ニュース -->
   <!-- 協会へのリンク -->
   <div class="top_agse">
     <a href="http://global-science.or.jp/" target="_blank">
@@ -121,4 +122,3 @@ Template Name: HD, HOME
       </div>
     </a>
   </div>
-  <?php wp_head(); ?>

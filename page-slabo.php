@@ -5,8 +5,6 @@ Template Name: サイエンスラボ
 get_header(); ?>
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 
-</div> <!-- container解除用 --> 
-
 <div id="voice01">
     <div class="container">
         <img src="<?php echo get_template_directory_uri(); ?>/img/slabo/logo.png">
@@ -50,9 +48,6 @@ get_header(); ?>
     </div>
 </div>
 
-    
-
-<div class="container"> <!-- container解除用 -->
 <?php get_footer(); ?>
     
     

@@ -4,6 +4,7 @@ Template Name: FP, 全ての投稿|
 */
 get_header(); ?>
     <article>
+      <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <?php
@@ -41,5 +42,6 @@ get_header(); ?>
                 endif; ?>
             </div>
         </div>
+              </div>
     </article>
 <?php get_footer(); ?>

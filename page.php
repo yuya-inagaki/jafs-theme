@@ -4,8 +4,7 @@ Template Name: FP, TOP以外の共通|
 */
 get_header(); ?>
     <article>
-        <div class="row">
-            <div class="col-sm-12">
+      <div class="container">
                 <?php
                 if (have_posts()) :
                     while (have_posts()) :
@@ -22,6 +21,9 @@ get_header(); ?>
                                 <?php the_content(); ?>
                                 <?php edit_post_link('このページを編集', '<p>', '</p>'); ?>
                             </div>
+                            <div class="row">
+                              <div class="col-md-6">aaaaa</div>
+                            </div>
                         </div><!-- /post -->
                         <?php
                     endwhile;
@@ -29,7 +31,6 @@ get_header(); ?>
                     <p>no page</p>
                     <?php
                 endif; ?>
-            </div>
-        </div>
+      </div>
     </article>
 <?php get_footer(); ?>
