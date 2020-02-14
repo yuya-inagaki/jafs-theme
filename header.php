@@ -47,8 +47,6 @@
         <script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
         <!-- //JavaScript読み込み -->
         
-        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri() ?>">
-        
         <!-- 教室案内ページでのみ読み込み -->
         <?php if ( is_page_template( 'page-place.php' ) ) : ?>
             <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.rwdImageMaps.min.js"></script>

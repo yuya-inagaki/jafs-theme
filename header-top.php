@@ -18,7 +18,7 @@ Template Name: HD, HOME
     <!-- header.css -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-2" type="text/css" >
     <!-- top-page.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214" type="text/css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214-2" type="text/css">
     <!-- fontawsome -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
@@ -46,8 +46,6 @@ Template Name: HD, HOME
     <script src="<?php echo get_template_directory_uri(); ?>/js/main_func.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
     <!-- //JavaScript読み込み -->
-    
-    <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri() ?>">
 
     <?php wp_head(); ?>
   </head>

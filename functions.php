@@ -8,7 +8,12 @@
 // remove_action( ‘wp_head’, ‘wp_generator’ );
 // remove_action( ‘wp_head’, ‘rel_canonical’ );
 
-//1.初期設定
+//CSS読み込み
+function jafs_enqueue_styles() {
+  wp_enqueue_style( 'main-style', get_stylesheet_uri() );
+}
+
+add_action( 'wp_enqueue_scripts', 'jafs_enqueue_styles' );
 
 //ダッシュボードでメニューをサポートする
 add_theme_support('menus');
@@ -291,7 +296,7 @@ function apply_template($atts)
  <p>なお、初回はロボット教材費が入りますのでご負担をおかけしますが、その後は少なくなってまいります。<br>試行
 	錯誤のためには、自分の教材が必要ですので、なにとぞご理解を賜りたく存じます。</p>
 	<br>基礎課程として、下記のコースを約１年半かけて学んでゆきます。<br>
-	<strong><a href="http://e-kagaku.com/index/top_general">*講座のカリキュラムや詳細な内容は，こちらから</a></strong></p>
+	<strong><a href="http://e-kagaku.com/index/academy">*講座のカリキュラムや詳細な内容は，こちらから</a></strong></p>
 	';
 }
 add_shortcode("apply_template", "apply_template");
@@ -304,7 +309,7 @@ function basic_fare($atts)
 	年会費：　10,000　円<br>
 	会員特典：講座・合宿・ロボットパーツなどの割引、講座・合宿などの優先申込など<br>
 	本講座に申し込みされる方で、事前に会員登録された場合にも割引が適用されます。<br>
-	*子どもの理科離れをなくす会 会員の申し込みは、<a href="http://e-kagaku.com/index/top_general/member_apply">こちら</a>から可能です。<br>
+	*子どもの理科離れをなくす会 会員の申し込みは、<a href="http://e-kagaku.com/index/academy/member_apply">こちら</a>から可能です。<br>
 	';
 }
 add_shortcode("basic_fare", "basic_fare");

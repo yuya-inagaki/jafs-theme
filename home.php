@@ -71,7 +71,7 @@ get_header('top'); ?>
     <div class="container">
         <div class="row row-eq-height">
             <div class="col-sm-6 col-md-4">
-                <a href="https://e-kagaku.com/top_general/classroom/">
+                <a href="https://e-kagaku.com/academy/classroom/">
                     <div class="box">
                         <img src="<?php bloginfo('template_url'); ?>/img/toppage/06.jpg">
                         <p>全国の教室のご案内</p>
