@@ -102,7 +102,7 @@
           </div>
         </div>
         <!-- sm/tablet menu -->
-        <div class="sm-menu-box" :class="{ active: !smMenuActive }">
+        <div class="sm-menu-box" :class="{ active: smMenuActive }">
           <div class="sm-menu-box-inner">
             <!-- メニューの表示 -->
             <div class="sm-global-menu">
