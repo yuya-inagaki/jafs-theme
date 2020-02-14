@@ -44,7 +44,7 @@ Template Name: HD, HOME
     <!-- JavaScript読み込み -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/slick/slick.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/main_func.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/common.js?ver=20200214-2"></script>
     <!-- //JavaScript読み込み -->
 
     <?php wp_head(); ?>
