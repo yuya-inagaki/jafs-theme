@@ -79,9 +79,9 @@ Template Name: HD, HOME
         <!-- sm/tablet menu -->
         <div class="sm-menu-box" :class="{ active: smMenuActive }">
           <div class="sm-menu-box-inner">
-            <h2 class="title">Menu</h2>
-            <!-- メニューの表示 -->
-            <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            <div class="sm-global-menu">
+              <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
+            </div>
             <div style="display: flex;">
                 <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
                   <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
