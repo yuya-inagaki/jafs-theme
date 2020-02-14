@@ -1,0 +1,86 @@
+/* 
+* アカデミー専用CSS
+*/
+#academy {
+  width: 100%;
+  margin-top: -100px;
+}
+
+#academy .slider-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+#academy .slider-wrapper .slider-box {
+  width: 100%;
+}
+
+#academy .slider-wrapper .slider-box .slider {
+  width: 100%;
+  height: 70vh;
+}
+
+#academy .slider-wrapper img.point {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 200px;
+  max-width: 20%;
+}
+
+#academy .slider-wrapper .sidebanner-box {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+#academy .slider-wrapper .sidebanner-box a {
+  background: white;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+#academy .slider-wrapper .sidebanner-box a:first-child {
+  margin-bottom: 10px;
+}
+
+#academy .slider-wrapper .sidebanner-box a.taiken {
+  border-top: 4px solid #0084ff;
+  border-right: 8px solid #0084ff;
+  border-bottom: 4px solid #0084ff;
+  color: #0084ff;
+}
+
+#academy .slider-wrapper .sidebanner-box a.apply {
+  border-top: 4px solid #e47820;
+  border-right: 8px solid #e47820;
+  border-bottom: 4px solid #e47820;
+  color: #e47820;
+}
+
+
+#academy .slider01 {
+  background: url('../img/academy/slider01.jpg') center / cover;
+}
+
+#academy .slider02 {
+  background: url('../img/academy/slider02.jpg') center / cover;
+}
+
+#academy .slider03 {
+  background: url('../img/academy/slider03.jpg') center / cover;
+}
+
+#academy .slider04 {
+  background: url('../img/academy/slider04.jpg') center / cover;
+}
+
+
+#academy .VueCarousel-pagination {
+  position: relative;
+  top: -60px;
+}

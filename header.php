@@ -25,6 +25,10 @@
     <?php if ( is_page_template( 'page-classroom.php' ) || is_page_template( 'page-classroom2.php' ) || is_page_template( 'page-place.php' ) ||  is_page_template( 'page-first.php' ) ) { ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
     <?php } ?>
+    <?php if ( is_page_template( 'page-academy.php' ) ) : ?>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/academy.css" type="text/css">
+    <script src="https://ssense.github.io/vue-carousel/js/vue-carousel.min.js"></script>
+    <?php endif; ?>
     <!-- fontawsome -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
