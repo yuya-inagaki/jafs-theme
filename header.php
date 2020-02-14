@@ -66,7 +66,7 @@
     <header>
       <div id="header">
         <div class="global-menu" v-if="isPc">
-          <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+          <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
         </div>
         <div class="header-box-wrapper" :class="{ top: isTop && isPc }">
           <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
@@ -83,7 +83,11 @@
             <div class="pc-only f-right">
               <div class="menu-box">
                 <!-- メニューの表示 -->
+                <?php if(is_page('academy') || page_is_ancestor_of('academy')): ?>
+                <?php wp_nav_menu(array('theme_location' => 'academy-menu')); ?>
+                <?php else: ?>
                 <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+                <?php endif; ?>
               </div>
             </div>
             <!-- sm only menu -->

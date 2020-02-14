@@ -187,15 +187,9 @@ $defaults = array(
 add_theme_support('custom-header', $defaults);
 //メニューの追加
 register_nav_menus(array(
-	'class_exp-menu' => __('class_exp-menu', 'rikakai'), // 「教室、体験参加希望」メニュー
-//  'himitsubeya-menu' => __( 'himitsubeya-menu', 'rikakai' ), // 「秘密部屋」メニュー
-	'corporation-menu' => __('corporation-menu', 'rikakai'), // 企業向けメニュー
-	'school-menu' => __('school-menu', 'rikakai'), // 学校関係者向けメニュー
+	'global-menu' => __('global-menu', 'rikakai'), // グローバルメニュー
 	'top-menu' => __('top-menu', 'rikakai'), // トップメニュー
-	'under_top-menu' => __('under_top-menu', 'rikakai'), // トップメニューの下に入れるメニュー
-	'education-menu' => __('education-menu', 'rikakai'), // 「教育関係者向け」メニュー
-	'government-menu' => __('government-menu', 'rikakai'), // 「自治体、教育委員会」メニュー
-	'sponsor-menu' => __('sponsor-menu', 'rikakai') // 「後援・協力について」メニュー
+	'academy-menu' => __('academy-menu', 'rikakai'), // アカデミーメニュー
 ));
 //idからナビバーを決定する
 function decide_navbar()
