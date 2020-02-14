@@ -106,7 +106,7 @@
           <div class="sm-menu-box-inner">
             <!-- メニューの表示 -->
             <div class="sm-global-menu">
-            <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            <?php wp_nav_menu(array('theme_location' => 'global-menu')); ?>
             </div>
             <?php if(is_page('academy') || page_is_ancestor_of('academy')): ?>
             <h2 class="title">e-kagaku Academy</h2>
