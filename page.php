@@ -21,9 +21,6 @@ get_header(); ?>
                                 <?php the_content(); ?>
                                 <?php edit_post_link('このページを編集', '<p>', '</p>'); ?>
                             </div>
-                            <div class="row">
-                              <div class="col-md-6">aaaaa</div>
-                            </div>
                         </div><!-- /post -->
                         <?php
                     endwhile;

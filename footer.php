@@ -1,5 +1,5 @@
-<footer>
-  <div class="container" style="background-color:#242424; color:white;">
+<footer style="background-color:#242424; color:white;">
+  <div class="container">
     <div class="row">
       <div class="col-md-3 text-center">
         <img src="<?php bloginfo('template_url'); ?>/img/logo-white.png" style="width:200px; padding:20px;">
