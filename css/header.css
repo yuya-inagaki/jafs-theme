@@ -179,6 +179,18 @@ header #header .global-menu .menu .menu-item a {
   margin: 0 20px;
   color: black;
   list-style: none;
+  position: relative;
+}
+
+#header .header-box .pc-only .menu-box li.menu-item.current-menu-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 5px;
+  transform: translateX(-50%);
+  background: #00ccff;
+  border-radius: 20px;
 }
 
 #header .header-box .pc-only .menu-box li.menu-item a {
