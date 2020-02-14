@@ -17,7 +17,7 @@ a.link-btn:visited, a.link-btn:active, a.link-btn:link{text-decoration:none; col
 /* //リンク用ボタン */
 
 /* Section1 */
-#supporter-sec1{width:100%; }
+#supporter-sec1{width:100%; margin-top: -116px;}
 #supporter-sec1 .pic{width:100%; height:500px;}
 #supporter-sec1 .supporter01{background:url(../img/supporter/supporter01.jpg) center / cover;}
 #supporter-sec1 .supporter02{background:url(../img/supporter/supporter02.jpg) center / cover;}

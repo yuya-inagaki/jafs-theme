@@ -12,6 +12,8 @@ Template Name: HD, HOME
     <meta http-equiv="content-language" content="ja">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+
+    <?php wp_head(); ?>
         
     <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap4/bootstrap-grid.min.css">
@@ -46,8 +48,6 @@ Template Name: HD, HOME
     <script src="<?php echo get_template_directory_uri(); ?>/js/main_func.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/common.js?ver=20200214-2"></script>
     <!-- //JavaScript読み込み -->
-
-    <?php wp_head(); ?>
   </head>
 <body>
   <header>

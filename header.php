@@ -16,6 +16,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php wp_title('|', true, 'right');
             bloginfo('name'); ?></title>
+
+        <?php wp_head(); ?>
         
         <!-- bootstrap 4.1.3 -->
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap4/bootstrap.min.css">
@@ -33,6 +35,9 @@
         <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         
         <!-- Vue.js -->
         <?php $url = esc_url( home_url() ); if(strstr($url,'ekagaku.local')==true): ?>
@@ -57,7 +62,6 @@
             <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/supporter.css" type="text/css" />
         <?php endif; ?>
 
-        <?php wp_head(); ?>
     </head>
 <body>
     <?php if ( !is_page_template( 'page-slabo.php' ) ) : //サイエンスラボのページのみ非表示  ?>

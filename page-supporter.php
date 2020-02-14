@@ -9,16 +9,16 @@ get_header(); ?>
 <div id="supporter-sec1">
     <div class="container-fluid relative">
         <div class="row">
-            <div class="col-xs-3" style="padding:0;">
+            <div class="col-3" style="padding:0;">
                 <div class="pic supporter01"></div>
             </div>
-            <div class="col-xs-3" style="padding:0;">
+            <div class="col-3" style="padding:0;">
                 <div class="pic supporter02"></div>
             </div>
-            <div class="col-xs-3" style="padding:0;">
+            <div class="col-3" style="padding:0;">
                 <div class="pic supporter03"></div>
             </div>
-            <div class="col-xs-3" style="padding:0;">
+            <div class="col-3" style="padding:0;">
                 <div class="pic supporter04"></div>
             </div>
         </div>
@@ -26,34 +26,34 @@ get_header(); ?>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <a class="s-btn" href="#supporter-sec2">
-                <div class="col-md-3 col-xs-6" style="padding:0;">
-                    <div class="jmp-btn text-center">
-                        仕事紹介<br><i class="fas fa-angle-down"></i>
-                    </div>
+            <div class="col-md-3 col-6" style="padding:0;">
+              <a class="s-btn" href="#supporter-sec2">
+                <div class="jmp-btn text-center">
+                  仕事紹介<br><i class="fas fa-angle-down"></i>
                 </div>
-            </a>
-            <a class="s-btn" href="#supporter-sec3">
-                <div class="col-md-3 col-xs-6" style="padding:0;">
-                    <div class="jmp-btn text-center">
-                        メリット<br><i class="fas fa-angle-down"></i>
-                    </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6" style="padding:0;">
+              <a class="s-btn" href="#supporter-sec3">
+                <div class="jmp-btn text-center">
+                  メリット<br><i class="fas fa-angle-down"></i>
                 </div>
-            </a>
-            <a class="s-btn" href="#supporter-sec4">
-                <div class="col-md-3 col-xs-6" style="padding:0;">
-                    <div class="jmp-btn text-center">
-                        サポーターの声<br><i class="fas fa-angle-down"></i>
-                    </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6" style="padding:0;">
+              <a class="s-btn" href="#supporter-sec4">
+                <div class="jmp-btn text-center">
+                  サポーターの声<br><i class="fas fa-angle-down"></i>
                 </div>
-            </a>
-            <a class="s-btn" href="#supporter-sec5">
-                <div class="col-md-3 col-xs-6" style="padding:0;">
-                    <div class="jmp-btn text-center">
-                        採用情報<br><i class="fas fa-angle-down"></i>
-                    </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6" style="padding:0;">
+              <a class="s-btn" href="#supporter-sec5">
+                <div class="jmp-btn text-center">
+                  採用情報<br><i class="fas fa-angle-down"></i>
                 </div>
-            </a>
+              </a>
+            </div>
         </div>
     </div>
 </div>
@@ -71,7 +71,7 @@ get_header(); ?>
         <h1 class="supporter"><span>当会で働くメリット</span></h1>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 offset-md-2">
                 <div class="advantage-box">
                     <div class="num"><i class="fas fa-thumbs-up"></i><span style="font-size:1.5em; margin-left:5px;">1</span></div>
                     <div class="title">プログラミングなどのICTスキルを獲得できる</div>
@@ -184,9 +184,9 @@ get_header(); ?>
     <div class="container text-center">
         <h1 class="supporter"><span>採用情報</span></h1>
         <div class="row" style="width:100%; max-width:800px; margin:0 auto; font-weight:bold; font-size:1.3em; padding:20px 0;">
-            <div class="col-xs-4"><a href="#ws1" class="ws-btn">アルバイト<br><i class="fas fa-angle-down"></i></a></div>
-            <div class="col-xs-4"><a href="#ws2" class="ws-btn">インターン<br><i class="fas fa-angle-down"></i></a></div>
-            <div class="col-xs-4"><a href="#ws3" class="ws-btn">ボランティア<br><i class="fas fa-angle-down"></i></a></div>
+            <div class="col-4"><a href="#ws1" class="ws-btn">アルバイト<br><i class="fas fa-angle-down"></i></a></div>
+            <div class="col-4"><a href="#ws2" class="ws-btn">インターン<br><i class="fas fa-angle-down"></i></a></div>
+            <div class="col-4"><a href="#ws3" class="ws-btn">ボランティア<br><i class="fas fa-angle-down"></i></a></div>
         </div>
         <p class="work-style" id="ws1">アルバイト</p>
         <table>
