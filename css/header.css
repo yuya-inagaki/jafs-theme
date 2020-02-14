@@ -232,6 +232,36 @@ header #header .global-menu .menu .menu-item a {
   text-align: left;
 }
 
+#header .sm-menu-box-inner .sm-global-menu {
+  width: 100%;
+}
+
+#header .sm-menu-box-inner .sm-global-menu ul.menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#header .sm-menu-box-inner .sm-global-menu li.menu-item {
+  width: 50%;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 2px;
+  text-align: center;
+}
+
+#header .sm-menu-box-inner .sm-global-menu li.menu-item:first-child {
+  width: 100%;
+}
+
+#header .sm-menu-box-inner .sm-global-menu li.menu-item a {
+  background: white;
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+  padding: 20px 0;
+  color: black;
+}
+
 #header .sm-menu-box-inner h2.title {
   color: white;
   border-left: none;

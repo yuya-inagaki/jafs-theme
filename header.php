@@ -20,7 +20,7 @@
         <!-- bootstrap 4.1.3 -->
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>css/bootstrap-4.1.3-dist/css/bootstrap.min.css">
         <!-- header.css -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-1" type="text/css">
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-2" type="text/css">
         <!-- classroom.css -->
         <?php if ( is_page_template( 'page-classroom.php' ) || is_page_template( 'page-classroom2.php' ) || is_page_template( 'page-place.php' ) ||  is_page_template( 'page-first.php' ) ) { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
@@ -102,11 +102,16 @@
           </div>
         </div>
         <!-- sm/tablet menu -->
-        <div class="sm-menu-box" :class="{ active: smMenuActive }">
+        <div class="sm-menu-box" :class="{ active: !smMenuActive }">
           <div class="sm-menu-box-inner">
-            <h2 class="title">Menu</h2>
             <!-- メニューの表示 -->
+            <div class="sm-global-menu">
             <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            </div>
+            <?php if(is_page('academy') || page_is_ancestor_of('academy')): ?>
+            <h2 class="title">e-kagaku Academy</h2>
+            <?php wp_nav_menu(array('theme_location' => 'academy-menu')); ?>
+            <?php endif; ?>
             <div style="display: flex;">
                 <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
                   <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
