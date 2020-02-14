@@ -2,6 +2,7 @@
 * 共通Script
 */
 const borderPcMobile = 875;
+const borderIsTop = 30;
 const showGoTopBtn = 800;
 
 document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み込み終わってから実行
@@ -39,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み�
     computed: {
       isPc() {
         return this.width > borderPcMobile;
+      },
+      isTop() {
+        return this.scrollY < borderIsTop;
       }
     },
     mounted: function () {

@@ -54,40 +54,42 @@ Template Name: HD, HOME
 <body>
   <header>
     <div id="header">
-      <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
-        <a href="<?php echo home_url() ?>">
-          <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
-        </a>
-        <!-- pc only menu -->
-        <div class="pc-only f-right">
-          <div class="menu-box">
-            <!-- メニューの表示 -->
-            <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+      <div class="header-box-wrapper">
+        <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
+          <a href="<?php echo home_url() ?>">
+            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
+          </a>
+          <!-- pc only menu -->
+          <div class="pc-only f-right">
+            <div class="menu-box">
+              <!-- メニューの表示 -->
+              <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            </div>
           </div>
-        </div>
-        <!-- sm only menu -->
-        <div class="sm-only f-right">
-          <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
-            <div class="btn-trigger">
-              <span></span>
-              <span></span>
+          <!-- sm only menu -->
+          <div class="sm-only f-right">
+            <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
+              <div class="btn-trigger">
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- sm/tablet menu -->
-      <div class="sm-menu-box" :class="{ active: smMenuActive }">
-        <div class="sm-menu-box-inner">
-          <h2 class="title">Menu</h2>
-          <!-- メニューの表示 -->
-          <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
-          <div style="display: flex;">
-              <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
-                <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
-              </a>
-              <a class="btn-img" href="http://global-science.or.jp/robo/" target="_blank">
-                <img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" alt="体験教室">
-              </a>
+        <!-- sm/tablet menu -->
+        <div class="sm-menu-box" :class="{ active: smMenuActive }">
+          <div class="sm-menu-box-inner">
+            <h2 class="title">Menu</h2>
+            <!-- メニューの表示 -->
+            <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+            <div style="display: flex;">
+                <a class="btn-img" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform">
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" alt="情報配信登録">
+                </a>
+                <a class="btn-img" href="http://global-science.or.jp/robo/" target="_blank">
+                  <img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" alt="体験教室">
+                </a>
+            </div>
           </div>
         </div>
       </div>

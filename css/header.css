@@ -106,14 +106,45 @@ header {
   margin-bottom: 80px;
 }
 
-header #header{
-  position: static;
+header #header {
+  width: 100%;
+}
+
+header #header .global-menu {
+  width: 100%;
+  padding: 0px 20px;
+  background: #f3f3f3;
+}
+
+header #header .global-menu .menu {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+header #header .global-menu .menu li.menu-item.current-menu-item {
+  padding: 5px 10px;
+  margin: 0px 20px 5px;
+  border-top: 5px solid #929292;
+}
+
+header #header .global-menu .menu .menu-item a {
+  text-decoration: none;
+  color: black;
+}
+
+#header .header-box-wrapper {
   position: fixed;
   width: 100%;
   margin-top: 20px;
   padding: 0 20px;
   z-index: 1;
   top:0;
+  transition:all 0.3s;
+}
+
+#header .header-box-wrapper.top {
+  transform: translateY(30px);
 }
 
 #header .header-box {

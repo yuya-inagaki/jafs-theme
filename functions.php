@@ -551,3 +551,16 @@ function create_custom_menu_page() {
     // カスタムメニューページを読み込む
     require TEMPLATEPATH.'/admin/add_settings.php';
 }
+
+// 親ページに指定されたスラッグが含まれているかを調査する関数
+function page_is_ancestor_of($slug) {
+  global $post;
+  $page = get_page_by_path($slug);
+  $result = false;
+  if( isset($page) ) {
+    foreach ($post->ancestors as $ancestor) {
+      if($ancestor == $page->ID) $result = true;
+    }
+  }
+  return $result;
+}

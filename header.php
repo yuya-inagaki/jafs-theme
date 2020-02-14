@@ -65,23 +65,34 @@
     <?php if ( !is_page_template( 'page-slabo.php' ) ) : //サイエンスラボのページのみ非表示  ?>
     <header>
       <div id="header">
-        <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
-          <a href="<?php echo home_url() ?>">
-            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
-          </a>
-          <!-- pc only menu -->
-          <div class="pc-only f-right">
-            <div class="menu-box">
-              <!-- メニューの表示 -->
-              <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+        <div class="global-menu" v-if="isPc">
+          <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+        </div>
+        <div class="header-box-wrapper" :class="{ top: isTop && isPc }">
+          <div class="header-box" :class="{ hidemenu: !pcMenuActive && isPc }">
+            <?php if(is_page('academy') || page_is_ancestor_of('academy')): ?>
+            <a href="<?php echo home_url() ?>/academy">
+              <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-academy.jpg" alt="e-kagaku">
+            </a>
+            <?php else: ?>
+            <a href="<?php echo home_url() ?>">
+              <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" alt="e-kagaku">
+            </a>
+            <?php endif; ?>
+            <!-- pc only menu -->
+            <div class="pc-only f-right">
+              <div class="menu-box">
+                <!-- メニューの表示 -->
+                <?php wp_nav_menu(array('theme_location' => 'top-menu')); ?>
+              </div>
             </div>
-          </div>
-          <!-- sm only menu -->
-          <div class="sm-only f-right">
-            <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
-              <div class="btn-trigger">
-                <span></span>
-                <span></span>
+            <!-- sm only menu -->
+            <div class="sm-only f-right">
+              <div class="menu-btn" :class="{ active: smMenuActive }" @click="triggerSmMenu">
+                <div class="btn-trigger">
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
