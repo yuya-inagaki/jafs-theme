@@ -18,9 +18,9 @@
             bloginfo('name'); ?></title>
         
         <!-- bootstrap 4.1.3 -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>css/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap4/bootstrap.min.css">
         <!-- header.css -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-2" type="text/css">
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-3" type="text/css">
         <!-- classroom.css -->
         <?php if ( is_page_template( 'page-classroom.php' ) || is_page_template( 'page-classroom2.php' ) || is_page_template( 'page-place.php' ) ||  is_page_template( 'page-first.php' ) ) { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/solid.css">
         <!-- Googleのフォント？ -->
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
         

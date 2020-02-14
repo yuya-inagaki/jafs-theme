@@ -16,7 +16,7 @@ Template Name: HD, HOME
     <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap4/bootstrap-grid.min.css">
     <!-- header.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-2" type="text/css" >
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-3" type="text/css" >
     <!-- top-page.css -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214-2" type="text/css">
     <!-- fontawsome -->
@@ -24,7 +24,7 @@ Template Name: HD, HOME
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/solid.css">
     <!-- Googleのフォント？ -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Alegreya+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 

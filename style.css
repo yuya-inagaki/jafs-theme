@@ -5,97 +5,174 @@ Author: Yuya Inagaki
 Author URI: none
 Description: This theme is custmized for jafs (e-kagaku.com). Bootstrap 3 grid system was applied to the theme.
 
-Version: 2.0
+Version: 3.0.1
 */
 
-
-/*PC*/
-
-
-/*@media screen and (max-width: 1199px) {
-	body {
-		max-width: 100%;
-		-webkit-text-size-adjust : 100%!important ;
-	}
-	nav a{
-		font-size: 80%;
-	}
-	.container {
-		max-width: 100%;
-	}
-	#posts-top {
-		width: 100%;
-	}
-	.l-sidebar {
-		display:none;
-		clear: both;
-		width: 0px;
-	}
-	.r-sidebar {
-		display:none;
-		clear: both;
-		width: 0px;
-	}
-	.footer {
-		width: 100%;
-	}
+/*cssのリセット*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,
+ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+figcaption,figure,footer,header,hgroup,menu,nav,section,
+summary,time,mark,audio,video {
+  font-family: -apple-system, system-ui, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial, メイリオ, Meiryo, sans-serif;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
-*/
-
-
-/*PC big*/
-
-
-/*all*/
 
 html {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0 auto;
-    padding: 0;
-    /*background: rgba(200,230,250,0.5);*/
-    /*background: rgb(240,240,240);*/
-    /*background: #88CCE8;/**/
-    background: #ffffff;
+  line-height: 1;
 }
 
-h2 {
-    border-left: 8px solid #1D62F0;
-    /*border-bottom:dotted 1px #190808;*/
-    width: 100%;
-    line-height: 30px;
-    padding-left: 10px;
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display: block;
 }
 
-h3 {
-    /*font-size: 15px;*/
-    border-left: 4px solid #1D62F0;
-    /*border-bottom:dotted 1px #190808;*/
-    width: 100%;
-    line-height: 20px;
-    padding-left: 10px;
-    margin-left: 10px;
+nav ul {
+  list-style: none;
 }
 
-div {
-    margin: 0;
-    padding: 0;
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 
 a {
-    text-decoration: none;
-    color: none;
-    margin,
-    padding: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  text-decoration: none;
+  color: #000;
+  background-color: #ff9;
+}
+
+mark {
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  background-color: #ff9;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/*サイト全体の基準となるCSSを記述*/
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 1６px;
+  }
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: #222222;
+}
+
+/*見出しを全て太字で表示 + 文字色を黒に*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #000;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 p {
-    padding-bottom: 10px;
-    margin: 0;
-    line-height: 1.8;
+  padding-bottom: 30px;
+  margin: 0;
+  line-height: 1.8;
 }
 
 li {
@@ -104,104 +181,7 @@ li {
 }
 
 
-/*.container {
-	width:1200px;
-	margin:0 auto;
-	padding:0;
-	overflow: hidden;
-}*/
 
-img {
-    margin: 5px;
-}
-
-
-
-
-/*トップナビバー2*/
-
-.under_top {
-    background: white;
-    color: black;
-    border-top: solid 1px gray;
-    border-bottom: solid 1px gray;
-}
-
-.under_top li {
-    /*width:20%;*/
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-.under_top>div>div>ul>li>a {
-    color: black;
-}
-
-.under_top>div>div>ul>li>a:hover {
-    background: gray;
-    color: white;
-}
-
-
-/*slideshow*/
-
-#slides>img {
-    margin: 0;
-    padding: 0;
-    /*max-width: auto !important;*/
-}
-
-
-/* home */
-
-.info {
-    background: white;
-}
-
-
-/*posts*/
-
-#post {
-    background: white;
-    padding: 10px;
-}
-
-
-/*footer*/
-
-footer>ul {
-    list-type: none;
-}
-
-footer>h2 {
-    border-left: none;
-    border-bottom: none;
-    font-size: 12px;
-    line-height: 0px;
-    padding-left: 0;
-}
-
-footer>ul>li {
-    padding: 0;
-    margin: 5px;
-}
-
-.footer {
-    /*background-color: #1D62F0;*/
-    background: rgb(240, 240, 240);
-    ;
-    border-top: solid 1px gray;
-    width: auto;
-    color: black;
-}
-
-.home-widget-frame>img {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 auto;
-    padding: 0;
-}
 
 
 /* panel-infomartion*/
