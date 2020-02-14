@@ -225,7 +225,6 @@ header #header .global-menu .menu .menu-item a {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: -1;
   transform: translateX(100vw);
   transition: all 0.5s;
 }
