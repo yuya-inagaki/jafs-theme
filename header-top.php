@@ -20,7 +20,7 @@ Template Name: HD, HOME
     <!-- header.css -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-4" type="text/css" >
     <!-- top-page.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200214-4" type="text/css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200217" type="text/css">
     <!-- fontawsome -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
@@ -94,6 +94,16 @@ Template Name: HD, HOME
       </div>
     </div>
   </header>
+
+  <div class="container">
+    <div style="display: flex;">
+      <a class="top_most_important" href="https://docs.google.com/forms/d/16DdMVnZbYBt2Zo9KU4F4HavemqDWvJCywJPgw4nn8t4/viewform"><img src="<?php bloginfo('template_url'); ?>/img/icon/info_register.png" max-width="190px" width="100%" alt="情報配信登録"></a>
+      <a class="top_most_important" href="https://global-science.or.jp/robo/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/icon/taiken_register.png" max-width="190px" width="100%" alt="体験教室"></a>
+      <a class="top_most_important_sns facebook" href="https://www.facebook.com/e.kagaku/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a class="top_most_important_sns twitter" href="https://twitter.com/jafs008" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a class="top_most_important_sns youtube" href="https://www.youtube.com/channel/UCajOFzv2Z-V_1WClnuoCnRA" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+    </div>
+  </div>
 
   <?php get_template_part('template/hello2020'); ?>
   <!-- トップページメインスライダー -->
