@@ -18,8 +18,6 @@ get_header(); ?>
                         <h1><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h1>
                     </div>
 
-
-
                     <div class="post-content classroom_main">
                         <!-- 教室インフォメーション -->
                         <?php if( get_field('class_info') ) { ?>
@@ -57,275 +55,107 @@ get_header(); ?>
                         <?php 
                             $basic_count=0; 
                             $class_count=0;
-                            $cs01_name="none";
-                            $cs02_name="none";
-                            $cs03_name="none";
-                            $cs04_name="none";
-                            $cs05_name="none";
-                            $cs06_name="none";
-                            $cs07_name="none";
-                            $cs08_name="none";
                             $class_robo=0;
                             $class_sp=0;
+							
+							$classes = [];
+							if(get_field('class_select')){
+								$check = get_field('class_select');
+								for($i = 1 ; $i <= 8 ; $i++){
+									if(in_array("class0${i}", $check)){
+										$cs = array(
+											"name" => get_field("class0${i}_name"),
+											"schedule" => get_field("class0${i}_schedule"),
+											"time" => get_field("class0${i}_time"),
+											"cost" => get_field("class0${i}_cost"),
+											"limit" => get_field("class0${i}_limit")
+										);
+										array_push(
+											$classes, $cs
+										);
+									}
+								}
+								if(in_array("classrobo", $check)) {$class_robo=1;}
+								if(in_array("classsp", $check)) {$class_sp=1;}
+							}
+							#var_dump($classes);
+
                             //本日の日付を取得
                             $today = Date("Ymd");
                             $oneweek = Date("Ymd", strtotime("-1 week"));
                             $week = array("日", "月", "火", "水", "木", "金", "土");
                             $levels = array("Beginner", "Basic", "Advanced 1", "Advanced 2","Super Advanced 1", "Super Advanced 2", "Premiere Applied 1", "Premiere Applied 2", "Premiere Applied 3", "Premiere Applied 4", "Professional Basic(前期)", "Professional Basic(後期)","Professional Advanced1", "Professional Advanced2", "Professional VBA");
-                            ?>
-                        <?php if( get_field('class_select') ) : ?>
-                            <?php $check = get_field('class_select');
-                                foreach ( (array)$check as $value ) { ?>
-                                <!-- 並び替えアルゴリズム -->
-                                <?php
-                                    if($value=='class01') {$cs01_name=get_field('class01_name');}
-                                    if($value=='class02') {$cs02_name=get_field('class02_name');}
-                                    if($value=='class03') {$cs03_name=get_field('class03_name');}
-                                    if($value=='class04') {$cs04_name=get_field('class04_name');}
-                                    if($value=='class05') {$cs05_name=get_field('class05_name');}
-                                    if($value=='class06') {$cs06_name=get_field('class06_name');}
-                                    if($value=='class07') {$cs07_name=get_field('class07_name');}
-                                    if($value=='class08') {$cs08_name=get_field('class08_name');}
-                                    if($value=='classrobo') {$class_robo=1;}
-                                    if($value=='classsp') {$class_sp=1;}
-                                ?>
-                                <!-- //並び替えアルゴリズム -->
-
-                            <?php } ?>
-                            <?php foreach( (array)$levels as $level ){
-                                if($level==$cs01_name){?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class01_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class01_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class01_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class01_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class01_cost'); ?></p>
-                                        <?php if(get_field('class01_name')=='Basic' || get_field('class01_name')=='Beginner') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++;  endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs02_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class02_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class02_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class02_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class02_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class02_cost'); ?></p>
-                                        <?php if(get_field('class02_name')=='Basic' || get_field('class02_name')=='Beginner') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs03_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class03_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class03_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class03_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class03_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class03_cost'); ?></p>
-                                        <?php if(get_field('class03_name')=='Basic'|| get_field('class03_name')=='Beginner') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs04_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class04_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class04_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class04_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class04_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class04_cost'); ?></p>
-                                        <?php if(get_field('class04_name')=='Basic' || get_field('class04_name')=='Beginner') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs05_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class05_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class05_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class05_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class05_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class05_cost'); ?></p>
-                                        <?php if(get_field('class05_name')=='Basic' || get_field('class05_name')=='Beginner') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs06_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class06_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class06_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class06_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class06_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class06_cost'); ?></p>
-                                        <?php if(get_field('class06_name')=='Basic') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs07_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class07_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class07_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class07_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class07_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class07_cost'); ?></p>
-                                        <?php if(get_field('class07_name')=='Basic') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php }if($level==$cs08_name){ ?>
-                                    <div class="col-sm-6 col-xs-12">
-                                    <div class="class_detail">
-                                        <div class="class_detail_title"><?php the_field('class08_name'); ?></div>
-                                        <?php 
-                                        $limit_day=get_field('class08_limit');
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
-                                        <?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
-                                            <div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
-                                        <?php else: ?>
-                                            <div class="class_detail_limit class_detail_open">現在開講中</div>
-                                        <?php endif; ?>
-                                        <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                        <p><?php the_field('class08_schedule'); ?></p>
-                                        <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                        <p><?php the_field('class08_time'); ?></p>
-                                        <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                        <p><?php the_field('class08_cost'); ?></p>
-                                        <?php if(get_field('class08_name')=='Basic') : $basic_count++; ?>
-                                            <div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
-                                        <?php else: $class_count++; endif; ?>
-                                    </div>
-                                    </div>
-                                <?php } ?>
-                            <?php }?>
-                            
-                            <!-- ロボット研究室 -->
-                            <?php if($class_robo==1) { ?>
-                                <div class="col-sm-6 col-xs-12">
-                                <div class="class_detail">
-                                    <div class="class_detail_title class_detail_robo">ロボット研究室</div>
-                                    <p>*こちらの講座は，各回ごとの参加が可能です．</p>
-                                    <p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
-                                    <p><?php the_field('classrobo_schedule'); ?></p>
-                                    <p class="subtitle"><i class="far fa-clock"></i> 時間</p>
-                                    <p><?php the_field('classrobo_time'); ?></p>
-                                    <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                    <p><?php the_field('classrobo_cost'); ?></p>
-                                    <div class="text-center">
-                                        <a href="<?php the_field('classrobo_apply'); ?>" target="_blank" class="btn_apply btn_apply_robo">お申込みはこちら</a>
-                                    </div>
-                                </div>
-                                </div>
-                            <?php } ?>
-                            <!-- 特別授業 -->
-                            <?php if($class_sp==1) { ?>
-                                <div class="col-sm-6 col-xs-12">
-                                <div class="class_detail">
-                                    <div class="class_detail_title class_detail_sp"><?php the_field('classsp_name'); ?></div>
-                                    <p><?php the_field('classsp_explain'); ?></p>
-                                    <p class="subtitle"><i class="far fa-calendar-alt"></i> 日程・時間</p>
-                                    <p><?php the_field('classsp_schedule'); ?></p>
-                                    <p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
-                                    <p><?php the_field('classsp_cost'); ?></p>
-                                    <div class="text-center">
-                                        <a href="<?php the_field('classsp_apply'); ?>" target="_blank" class="btn_apply btn_apply_sp">お申込みはこちら</a>
-                                    </div>
-                                </div>
-                                </div>
-                            <?php } ?>
-                            <!-- //特別授業 -->
-                        <?php else: ?>
-                        <p>現在開講中のクラスはありません</p>
-                        <?php endif; ?>
+							
+							if(get_field('class_select')){
+								foreach ($levels as $level){
+									for($i = 0 ; $i <= 8 ; $i++){
+										#echo $classes[$i]["name"];
+										if($level == $classes[$i]["name"]){?>
+											<div class="col-sm-6 col-xs-12">
+												<div class="class_detail">
+													<div class="class_detail_title"><?php echo $classes[$i]["name"]; ?></div>
+													<?php
+													$limit_day=$classes[$i]["limit"];
+													$limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
+													$limit_day_week=$week[(int)date_format(date_create($limit_day),'w')]; ?>
+													<?php if(strtotime($oneweek) < strtotime($limit_day)): ?>
+														<div class="class_detail_limit">お申込み期限：<?php echo($limit_day_format)."(".$limit_day_week.")"; ?></div>
+													<?php else: ?>
+														<div class="class_detail_limit class_detail_open">現在開講中</div>
+													<?php endif; ?>
+													<p class="subtitle"><i class="fas fa-calendar-alt"></i> スケジュール</p>
+													<p><?php echo $classes[$i]["schedule"]; ?></p>
+													<p class="subtitle"><i class="fas fa-clock"></i> 時間</p>
+													<p><?php echo $classes[$i]["time"]; ?></p>
+													<p class="subtitle"><i class="fas fa-yen-sign"></i> 参加費</p>
+													<p><?php echo $classes[$i]["cost"]; ?></p>
+													<?php if($classes[$i]["name"]=='Basic' || $classes[$i]["name"]=='Beginner') : $basic_count++; ?>
+														<div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
+													<?php else: $class_count++;  endif; ?>
+												</div>
+											</div><?php
+										}
+									}
+								}
+							
+								// ロボット研究室 -->
+								if($class_robo==1) { ?>
+									<div class="col-sm-6 col-xs-12">
+									<div class="class_detail">
+										<div class="class_detail_title class_detail_robo">ロボット研究室</div>
+										<p>*こちらの講座は，各回ごとの参加が可能です．</p>
+										<p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p>
+										<p><?php the_field('classrobo_schedule'); ?></p>
+										<p class="subtitle"><i class="far fa-clock"></i> 時間</p>
+										<p><?php the_field('classrobo_time'); ?></p>
+										<p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
+										<p><?php the_field('classrobo_cost'); ?></p>
+										<div class="text-center">
+											<a href="<?php the_field('classrobo_apply'); ?>" target="_blank" class="btn_apply btn_apply_robo">お申込みはこちら</a>
+										</div>
+									</div>
+									</div>
+									<?php } ?>
+								<!-- 特別授業 -->
+								<?php if($class_sp==1) { ?>
+									<div class="col-sm-6 col-xs-12">
+										<div class="class_detail">
+											<div class="class_detail_title class_detail_sp"><?php the_field('classsp_name'); ?></div>
+											<p><?php the_field('classsp_explain'); ?></p>
+											<p class="subtitle"><i class="far fa-calendar-alt"></i> 日程・時間</p>
+											<p><?php the_field('classsp_schedule'); ?></p>
+											<p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
+											<p><?php the_field('classsp_cost'); ?></p>
+											<div class="text-center">
+												<a href="<?php the_field('classsp_apply'); ?>" target="_blank" class="btn_apply btn_apply_sp">お申込みはこちら</a>
+											</div>
+										</div>
+									</div><?php
+								}
+								//特別授業
+                        	} else {
+                        		echo "<p>現在開講中のクラスはありません</p>";
+							} ?>
                         </div><!-- END .row -->
                         <!-- //開講前・開講中のクラス -->
                         
