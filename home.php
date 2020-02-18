@@ -9,7 +9,7 @@ get_header('top'); ?>
 
 <div id="top-sec1">
     <div class="container relative">
-        <span class="title">News</span>
+        <span class="title">Newss</span>
         <a class="news-all" href="<?php echo home_url('/'); ?>gallery/info/"><span><i class="fas fa-plus"></i> 全ての記事</span></a>
     <?php
         $args = array('posts_per_page' => 5, 'orderby' => 'date', 'category_name' => news);
