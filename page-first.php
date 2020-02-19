@@ -5,6 +5,19 @@ Template Name: 初めて受講の方へ
 get_header(); ?>
 </div> <!-- container解除用 --> 
 
+<?php
+//表示するクラスかどうかを調べる関数
+function is_show_class($selected_classes, $class_num){
+	$flag = false;
+	foreach($selected_classes as $selected_class) {
+		if ($selected_class == $class_num) {
+			$flag = true;
+		}
+	}
+	return $flag;
+}
+?>
+
 <div id="first-apply">
     <div class="container">
     <article>
@@ -22,7 +35,6 @@ get_header(); ?>
                         </div>
 
                         <div class="post-content first_main">
-                            
                             <h2>現在Beginner・Basicコース募集中教室一覧</h2>
                             <div class="row">
                             <?php
@@ -36,17 +48,20 @@ get_header(); ?>
 
                             // 子ページ出力のための関数
                             $children = get_children(array(
-                                "post_parent"   => 4415, // ローカル20, 本番4415
+                                "post_parent"   => 13, // ローカル20, 本番4415
                                 "post_type"     => "page",
                                 "post_status"   => "publish",
                                 "order"         => "ASC"
                             ));
-                                
+							
+							#var_dump($children);
                             foreach($children as $child){
-                                $check = get_post_meta($child->ID, "class_select", true);
-                                foreach ( (array)$check as $value ) {
-                                    if($value=='class01' && ( get_post_meta($child->ID, "class01_name", true)=='Basic' || get_post_meta($child->ID, "class01_name", true)=='Beginner')) {
-                                        $limit_day=get_post_meta($child->ID, "class01_limit", true);
+								$selected_classes = get_post_meta($child->ID, "class_select", true);
+
+								for($i = 1 ; $i <= 8 ; $i++){
+									$class_name = get_post_meta($child->ID, "class0${i}_name", true);
+									if(is_show_class($selected_classes, "class0${i}") && ($class_name =='Basic' || $class_name=='Beginner')){
+										$limit_day=get_post_meta($child->ID, "class0${i}_limit", true);
                                         $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
                                         $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
                                         if(strtotime($oneweek)<strtotime($limit_day)){
@@ -54,89 +69,10 @@ get_header(); ?>
                                             $url=get_permalink( $child->ID );
                                             $address=get_post_meta($child->ID, "class_address", true);
                                             echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class01_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class01_time", true).'</p></div></a></div>');
+                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="fas fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class0${i}_schedule", true)).'</p><p class="subtitle"><i class="fas fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class0${i}_time", true).'</p></div></a></div>');
                                         }
-                                        
-                                    }elseif($value=='class02' && (get_post_meta($child->ID, "class02_name", true)=='Basic' || get_post_meta($child->ID, "class02_name", true)=='Beginner') ) {
-                                        $limit_day=get_post_meta($child->ID, "class02_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class02_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class02_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class03' && (get_post_meta($child->ID, "class03_name", true)=='Basic' || get_post_meta($child->ID, "class03_name", true)=='Beginner')) {
-                                        $limit_day=get_post_meta($child->ID, "class03_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class03_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class03_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class04' && (get_post_meta($child->ID, "class04_name", true)=='Basic' || get_post_meta($child->ID, "class04_name", true)=='Beginner')) {
-                                        $limit_day=get_post_meta($child->ID, "class04_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class04_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class04_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class05' && (get_post_meta($child->ID, "class05_name", true)=='Basic' || get_post_meta($child->ID, "class05_name", true)=='Beginner')) {
-                                        $limit_day=get_post_meta($child->ID, "class05_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class05_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class05_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class06' && get_post_meta($child->ID, "class06_name", true)=='Basic') {
-                                        $limit_day=get_post_meta($child->ID, "class06_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class06_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class06_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class07' && get_post_meta($child->ID, "class07_name", true)=='Basic') {
-                                        $limit_day=get_post_meta($child->ID, "class07_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class07_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class07_time", true).'</p></div></a></div>');
-                                        }
-                                    }elseif($value=='class08' && get_post_meta($child->ID, "class08_name", true)=='Basic') {
-                                        $limit_day=get_post_meta($child->ID, "class08_limit", true);
-                                        $limit_day_format=date_format(date_create($limit_day),'Y年m月d日');
-                                        $limit_day_week=$week[(int)date_format(date_create($limit_day),'w')];
-                                        if(strtotime($oneweek)<strtotime($limit_day)){
-                                            $basic_count++;
-                                            $url=get_permalink( $child->ID );
-                                            $address=get_post_meta($child->ID, "class_address", true);
-                                            echo ('<div class="col-sm-4"><a href="'.$url.'"><div class="class_detail"><div class="place_detail_title">'.$child->post_title.'</div><div class="class_detail_limit">お申込み期限：'.$limit_day_format.'('.$limit_day_week.')');
-                                            echo('</div><p>'.$address.'</p><p class="subtitle"><i class="far fa-calendar-alt"></i> スケジュール</p><p>'.nl2br(get_post_meta($child->ID, "class08_schedule", true)).'</p><p class="subtitle"><i class="far fa-clock"></i> 時間</p><p>'.get_post_meta($child->ID, "class08_time", true).'</p></div></a></div>');
-                                        }
-                                    }
-                                }
-                                    
+									}
+								}
                             }
                             if($basic_count==0){
                                 echo('<p>現在Basicコース（初級コース）募集中の教室はありません。</p><div class="text-center" style="width:100%;"><a href="http://e-kagaku.com/academy/classroom/" class="btn_apply">教室一覧はこちら</a></div>');
