@@ -48,7 +48,7 @@ function is_show_class($selected_classes, $class_num){
 
                             // 子ページ出力のための関数
                             $children = get_children(array(
-                                "post_parent"   => 13, // ローカル20, 本番4415
+                                "post_parent"   => 4415, // ローカル20, 本番4415
                                 "post_type"     => "page",
                                 "post_status"   => "publish",
                                 "order"         => "ASC"
