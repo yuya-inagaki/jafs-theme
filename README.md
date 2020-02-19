@@ -6,45 +6,19 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Quick summary 
-    * http://e-kagaku.comのためのwordpressテーマです．
+    * [https://e-kagaku.com](https://e-kagaku.com)のためのwordpressテーマです．
 * Version 
-    * 1.0
+    * 2.0
 * メンテナー  
-    * T. Matsumoto  
-    * R. Chikuma
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+    * Yuya Inagaki
+    * Motohashi Masatoshi
 
 ### How do I get set up? ###
 
 * Summary of set up
 
-Mac, Linux, Windows Proの人は Docker を推奨します．
-Docker公式のWordpressセットアップチュートリアルを参照し，Wordpressの環境を立ち上げてください．
-https://docs.docker.com/compose/wordpress/
+Dockerを使用してWordpressの環境を立ち上げる. 作業ディレクトリにて以下の内容で`docker-compose.yml`を作成.
 
-
-* Configuration
-
-### Contribution guidelines ###
-
-Wordpressの管理画面から設定のパーマリンク設定をクリックし，カスタム構造にチェックを入れる．
-カスタムのテキストボックスの中にをそのままコピペする．
-
-```
-/%category%/%year%-%monthnum%-%day%/%post_id%/
-```
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
-
-
-# Docker
 ```
 version: '2'
 
@@ -75,4 +49,20 @@ services:
       WORDPRESS_DB_NAME: wordpress
 volumes:
   db_data:
+```
+
+以下のコマンドでwordpress寛容を立ち上げ
+```
+docker-compose up -d
+```
+以下のWordpressテンプレート格納ディレクトリに移動して`html/wp-content/themes/`本テンプレートをクローンする
+
+## 作業コマンド
+- wordpress環境立ち上げ
+```
+docker-compose up -d
+```
+- wordpress環境クローズ
+```
+docker-compose down
 ```
