@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php
 //表示するクラスかどうかを調べる関数
-function is_show_class($selected_classes, $class_num){
+function is_show_class($selected_classes = array(), $class_num = "class00"){
 	$flag = false;
 	foreach($selected_classes as $selected_class) {
 		if ($selected_class == $class_num) {
