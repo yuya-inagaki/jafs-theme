@@ -74,9 +74,9 @@ function is_show_class($selected_classes, $class_num){
 								}
                             }
                             if($basic_count==0){
-                                echo('<p>現在Basicコース（初級コース）募集中の教室はありません。</p><div class="text-center" style="width:100%;"><a href="http://e-kagaku.com/academy/classroom/" class="btn_apply">教室一覧はこちら</a></div>');
+                                echo('<p>現在Basicコース（初級コース）募集中の教室はありません。</p><div class="text-center" style="width:100%;"><a href="http://e-kagaku.com/academy/classroom/" class="btn">教室一覧はこちら</a></div>');
                             }else{
-                                echo('<p>上記教室のBasicコースに参加する為には<span id="StY">当会の会員登録が必須</span>となります。会員登録兼お申込みフォームは以下のボタンからアクセス出来ます。</p><div class="text-center" style="width:100%;"><a href="https://goo.gl/forms/2SDryIZ85tC5amBV2" target="_blank" class="btn_apply btn_apply_cost">会員登録・お申込みはこちら</a></div><div class="text-center" style="width:100%;"><a href="https://forms.gle/8c9dhrS3k9zuYPAD6" target="_blank" class="btn_apply btn_apply_cost">Beginnerコースお申込みはこちら</a></div>');
+                                echo('<p>上記教室のBasicコースに参加する為には<span id="StY">当会の会員登録が必須</span>となります。会員登録兼お申込みフォームは以下のボタンからアクセス出来ます。</p><div class="text-center" style="width:100%;"><a href="https://goo.gl/forms/2SDryIZ85tC5amBV2" target="_blank" class="btn pink">会員登録・お申込みはこちら</a></div><div class="text-center" style="width:100%;"><a href="https://forms.gle/8c9dhrS3k9zuYPAD6" target="_blank" class="btn pink">Beginnerコースお申込みはこちら</a></div>');
                             }
                             ?>
                         </div>

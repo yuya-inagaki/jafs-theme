@@ -185,6 +185,51 @@ li {
 }
 
 
+/* ボタンスタイル */
+/* a.btn {position: relative; display:inline-block; width: 220px; padding: 0.8em; margin:5px 0; text-align: center; text-decoration: none; color: #fff; background: #2196F3; border:solid 1px #fff; overflow: hidden; font-weight:bold;} */
+a.btn {
+  display: inline-block;
+  background: #1572ff;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-right: 10px;
+  border-bottom: solid 4px #627295;
+  transition: linear 0.1s;
+}
+
+a.btn:hover {
+  color: white;
+  margin-top: 4px;
+  border-bottom: 0px;
+}
+
+a.btn.black {
+  background: black;
+}
+
+a.btn.white {
+  background: #fafafa;
+  color: #1f1f1f;
+}
+
+a.btn.pink {
+  background: #ff50a8;
+}
+
+a.btn.orange {
+  background: #ff8e2d;
+}
+
+a.btn.green {
+  background: #35b963;
+}
+
 
 /* panel-infomartion*/
 

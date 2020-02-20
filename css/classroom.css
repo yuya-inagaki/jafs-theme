@@ -73,18 +73,6 @@ height: 0;
     padding:5px 10px; background-color:#e6e6e6; font-weight:bold;
 }
 
-/* お申込みボタン */
-a.btn_apply {position: relative; display:inline-block; width: 220px; padding: 0.8em; margin:5px 0; text-align: center; text-decoration: none; color: #fff; background: #2196F3; border:solid 1px #fff; overflow: hidden; font-weight:bold;}
-a.btn_apply_new{background: #ff50a8;}
-a.btn_apply_cost{width: 290px; background: #2196F3;}
-a.btn_apply_hoshu{width: 270px; background: #ff50a8;}
-a.btn_apply_robo{background: #ff8e2d;}
-a.btn_apply_sp{background: #35b963;}
-a.btn_apply:before {content:""; position: absolute; top: -25px; left: -20px; height:90px; width:20px; background : #fff; opacity: 0.3; transform: rotate(40deg); transition: 0.3s; }
-a.btn_apply:hover{opacity:0.8;}
-a.btn_apply:hover, a.btn_apply:active, a.btn_apply:visited{color:white; text-decoration:none;}
-/* //お申込みボタン */
-
 /* ここから教室一覧レイアウト */
 
 .placement_main h2{border:none;}

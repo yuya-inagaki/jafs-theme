@@ -18,10 +18,6 @@ get_header(); ?>
                             <h1><?php the_title(); ?></h1>
                         </div>
 
-                       
-                        
-
-
                         <div class="post-content placement_main">
                             
                             <?php the_content(); ?>
@@ -103,7 +99,7 @@ get_header(); ?>
                             echo ('</div><hr>');
                             ?>
                             
-                            <a href="https://goo.gl/forms/zUYm9IcidqmUrGBJ3" target="_blank" class="btn_apply btn_apply_hoshu">欠席・振替・補習のお申込みはこちら</a>
+                            <a href="https://goo.gl/forms/zUYm9IcidqmUrGBJ3" target="_blank" class="btn pink">欠席・振替・補習のお申込みはこちら</a>
                             
                         </div>
                     </div><!-- /post -->

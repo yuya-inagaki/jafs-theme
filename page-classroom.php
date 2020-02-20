@@ -39,13 +39,13 @@ get_header(); ?>
 
                         <h2>お申込み</h2>
                         <p>お申し込みは<span id="StY">インタースクールHP</span>からお願いします。</p>
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn_apply">お申込みはこちら</a><br>
+                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">お申込みはこちら</a><br>
                         
                         <?php elseif( get_field('class_address')=='日野サイエンスクラブ' || get_field('class_address')=='小笠原学園' ) : ?>
                         
                         <h2>お申込み</h2>
                         <p>お申し込みは<span id="StY"><?php echo(get_field('class_address')); ?>HP</span>からお願いします。</p>
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn_apply">お申込みはこちら</a><br>
+                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">お申込みはこちら</a><br>
 
                         <?php else: ?>
                         <!-- 開講前・開講中のクラス -->
@@ -110,7 +110,7 @@ get_header(); ?>
 													<p class="subtitle"><i class="fas fa-yen-sign"></i> 参加費</p>
 													<p><?php echo $classes[$i]["cost"]; ?></p>
 													<?php if($classes[$i]["name"]=='Basic' || $classes[$i]["name"]=='Beginner') : $basic_count++; ?>
-														<div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply">初めてのお申込みはこちら</a></div>
+														<div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn">初めてのお申込みはこちら</a></div>
 													<?php else: $class_count++;  endif; ?>
 												</div>
 											</div><?php
@@ -131,7 +131,7 @@ get_header(); ?>
 										<p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
 										<p><?php the_field('classrobo_cost'); ?></p>
 										<div class="text-center">
-											<a href="<?php the_field('classrobo_apply'); ?>" target="_blank" class="btn_apply btn_apply_robo">お申込みはこちら</a>
+											<a href="<?php the_field('classrobo_apply'); ?>" target="_blank" class="btn green">お申込みはこちら</a>
 										</div>
 									</div>
 									</div>
@@ -147,7 +147,7 @@ get_header(); ?>
 											<p class="subtitle"><i class="far fa-check-square"></i> 参加費</p>
 											<p><?php the_field('classsp_cost'); ?></p>
 											<div class="text-center">
-												<a href="<?php the_field('classsp_apply'); ?>" target="_blank" class="btn_apply btn_apply_sp">お申込みはこちら</a>
+												<a href="<?php the_field('classsp_apply'); ?>" target="_blank" class="btn pink">お申込みはこちら</a>
 											</div>
 										</div>
 									</div><?php
@@ -161,25 +161,25 @@ get_header(); ?>
                         
                         <!-- 参加費・教材費・カリキュラム -->
                         <div class="text-center">
-                            <a href="http://e-kagaku.com/academy/curriculum/" target="_blank" class="btn_apply btn_apply_cost">参加費・教材・カリキュラムはこちら</a>
+                            <a href="http://e-kagaku.com/academy/curriculum/" target="_blank" class="btn pink">参加費・教材・カリキュラムはこちら</a>
                         </div>
                         <!-- //参加費・教材費・カリキュラム -->
 
                         <!-- お申込み -->
                         <h2>お申込み</h2>
                         <?php if($basic_count==0 && $class_count!=0): ?> 
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn_apply">継続教室お申込みはこちら</a><br>
+                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
                         <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
-                        <a href="https://goo.gl/forms/Giep7GXh9EdCGt9I3" target="_blank" class="btn_apply btn_apply_new">会員お申込みはこちら</a>
+                        <a href="https://goo.gl/forms/Giep7GXh9EdCGt9I3" target="_blank" class="btn pink">会員お申込みはこちら</a>
                         <?php elseif($basic_count!=0 && $class_count==0): ?>
                         <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
-                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply btn_apply_new">初めて受講の方はこちら</a>
+                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a>
                         <?php else: ?>
                         <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
-                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn_apply btn_apply_new">初めて受講の方はこちら</a><br>
+                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a><br>
                         
                         
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn_apply">継続教室お申込みはこちら</a><br>
+                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
                         <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
                         
                         <?php endif; ?>
@@ -189,7 +189,7 @@ get_header(); ?>
                         <?php if( get_field('class_extra')=='true' ) : ?>
                         <h2>欠席・振替・補習制度</h2>
                         <?php the_field('class_extra_main'); ?>
-                        <a href="https://goo.gl/forms/zUYm9IcidqmUrGBJ3" target="_blank" class="btn_apply btn_apply_hoshu">欠席・振替・補習のお申込みはこちら</a>
+                        <a href="https://goo.gl/forms/zUYm9IcidqmUrGBJ3" target="_blank" class="btn orange">欠席・振替・補習のお申込みはこちら</a>
                         <?php endif; ?>
                         <!-- //補習・振替 -->
 
