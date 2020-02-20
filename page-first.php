@@ -3,7 +3,6 @@
 Template Name: 初めて受講の方へ
 */
 get_header(); ?>
-</div> <!-- container解除用 --> 
 
 <?php
 //表示するクラスかどうかを調べる関数
@@ -98,5 +97,4 @@ function is_show_class($selected_classes, $class_num){
     </article>
     </div>
 </div>
-<div class="container"> <!-- container解除用 -->
 <?php get_footer(); ?>
