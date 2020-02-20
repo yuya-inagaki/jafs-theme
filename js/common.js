@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function(event) { //DOMを読み�
         this.height = window.innerHeight;
       },
       handleScroll() {
-        if (this.scrollY > window.scrollY) {
-          this.pcMenuActive = true;
-        } else {
+        if (this.scrollY < window.scrollY && window.scrollY > borderIsTop) {
           this.pcMenuActive = false;
+        } else {
+          this.pcMenuActive = true;
         }
         this.scrollY = window.scrollY;
       },
