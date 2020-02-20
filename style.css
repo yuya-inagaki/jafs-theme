@@ -186,7 +186,6 @@ li {
 
 
 /* ボタンスタイル */
-/* a.btn {position: relative; display:inline-block; width: 220px; padding: 0.8em; margin:5px 0; text-align: center; text-decoration: none; color: #fff; background: #2196F3; border:solid 1px #fff; overflow: hidden; font-weight:bold;} */
 a.btn {
   display: inline-block;
   background: #1572ff;
@@ -230,6 +229,13 @@ a.btn.green {
   background: #35b963;
 }
 
+/* blockquote */
+blockquote {
+  width: 100%;
+  padding: 10px 20px;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
 
 /* panel-infomartion*/
 
