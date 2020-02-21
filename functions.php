@@ -10,7 +10,7 @@
 
 //CSS読み込み
 function jafs_enqueue_styles() {
-  wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), '20200221' );
+  wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), '20200222' );
 }
 
 add_action( 'wp_enqueue_scripts', 'jafs_enqueue_styles' );

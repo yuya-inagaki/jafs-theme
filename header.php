@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-4" type="text/css">
     <!-- classroom.css -->
     <?php if ( is_page_template( 'page-classroom.php' ) || is_page_template( 'page-classroom2.php' ) || is_page_template( 'page-place.php' ) ||  is_page_template( 'page-first.php' ) ) { ?>
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css" type="text/css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/classroom.css?ver=20200222" type="text/css">
     <?php } ?>
     <?php if ( is_page_template( 'page-academy.php' ) ) : ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/academy.css" type="text/css">

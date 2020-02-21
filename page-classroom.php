@@ -168,19 +168,18 @@ get_header(); ?>
                         <!-- お申込み -->
                         <h2>お申込み</h2>
                         <?php if($basic_count==0 && $class_count!=0): ?> 
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
-                        <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
-                        <a href="https://goo.gl/forms/Giep7GXh9EdCGt9I3" target="_blank" class="btn pink">会員お申込みはこちら</a>
+                          <p><b>継続教室をすでに受講されている方</b>のお申し込みはこちらからお願い致します。</p>
+                          <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
+                          <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
                         <?php elseif($basic_count!=0 && $class_count==0): ?>
-                        <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
-                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a>
+                          <p><b>始めて受講される方</b>はこちらからお申し込みをお願い致します。</p>
+                          <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a>
                         <?php else: ?>
-                        <p>Basicコースを始めて受講される方は会員登録をお願い致します。</p>
-                        <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a><br>
-                        
-                        
-                        <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
-                        <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
+                          <p><b>始めて受講される方</b>はこちらからお申し込みをお願い致します。</p>
+                          <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a><br><br>
+                          <p><b>継続教室をすでに受講されている方</b>のお申し込みはこちらからお願い致します。</p>
+                          <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
+                          <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
                         
                         <?php endif; ?>
                         <!-- //お申込み -->
@@ -189,7 +188,9 @@ get_header(); ?>
                         <?php if( get_field('class_extra')=='true' ) : ?>
                         <h2>欠席・振替・補習制度</h2>
                         <?php the_field('class_extra_main'); ?>
+                        <div>
                         <a href="https://goo.gl/forms/zUYm9IcidqmUrGBJ3" target="_blank" class="btn orange">欠席・振替・補習のお申込みはこちら</a>
+                        </div>
                         <?php endif; ?>
                         <!-- //補習・振替 -->
 
