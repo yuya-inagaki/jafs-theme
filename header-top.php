@@ -14,13 +14,16 @@ Template Name: HD, HOME
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 
     <?php wp_head(); ?>
-        
+    <!-- CSS,JS 修正時の読み込み -->
+    <?php
+      define('VERSION', '20200222');
+    ?>
     <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap4/bootstrap-grid.min.css">
     <!-- header.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=20200214-4" type="text/css" >
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/header.css?ver=<?php echo VERSION ?>" type="text/css" >
     <!-- top-page.css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=20200217" type="text/css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/top-page.css?ver=<?php echo VERSION ?>" type="text/css">
     <!-- fontawsome -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/fontawesome-free-5.12.1-web/css/brands.css">
