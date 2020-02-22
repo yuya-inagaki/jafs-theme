@@ -110,7 +110,7 @@ get_header(); ?>
 													<p class="subtitle"><i class="fas fa-yen-sign"></i> 参加費</p>
 													<p><?php echo $classes[$i]["cost"]; ?></p>
 													<?php if($classes[$i]["name"]=='Basic' || $classes[$i]["name"]=='Beginner') : $basic_count++; ?>
-														<div class="text-center"><a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn">初めてのお申込みはこちら</a></div>
+														<div class="text-center"><a href="https://forms.gle/8c9dhrS3k9zuYPAD6" target="_blank" class="btn">初めてのお申込みはこちら</a></div>
 													<?php else: $class_count++;  endif; ?>
 												</div>
 											</div><?php
@@ -173,10 +173,10 @@ get_header(); ?>
                           <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
                         <?php elseif($basic_count!=0 && $class_count==0): ?>
                           <p><b>始めて受講される方</b>はこちらからお申し込みをお願い致します。</p>
-                          <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a>
+                          <a href="https://forms.gle/8c9dhrS3k9zuYPAD6" target="_blank" class="btn pink">初めて受講の方はこちら</a>
                         <?php else: ?>
                           <p><b>始めて受講される方</b>はこちらからお申し込みをお願い致します。</p>
-                          <a href="http://e-kagaku.com/academy/member_apply/" target="_blank" class="btn pink">初めて受講の方はこちら</a><br><br>
+                          <a href="https://forms.gle/8c9dhrS3k9zuYPAD6" target="_blank" class="btn pink">初めて受講の方はこちら</a><br><br>
                           <p><b>継続教室をすでに受講されている方</b>のお申し込みはこちらからお願い致します。</p>
                           <a href="<?php the_field('class_apply'); ?>" target="_blank" class="btn">継続教室お申込みはこちら</a><br>
                           <p>※当日の機材や講義内容の関係上、事前に人数確認を行っているため、<span id="StY">必ず期限内にお申込みください。</span></p>
