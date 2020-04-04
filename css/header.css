@@ -27,7 +27,7 @@
 .top-slider a:hover {text-decoration:none; border:none;}
 .slick-slide:not(.slick-current) .text span{display:none;} /*非表示中のスライドの子要素を非表示*/
 .slick-current span{display:none;} /*現在のスライドの子要素を非表示*/
-.top-slider .text_large span{ text-transform: uppercase; display: block; font-size: 92px; color: #f1ebe5; text-shadow: 0 0px 9px #41c3ff, 0px -2px 1px rgba(41, 41, 41, 0.397); font-weight: bold; letter-spacing: 4px;}
+.top-slider .text_large span{font-family: Meiryo, "Helvetica Rounded", Arial, sans-serif; display: block; font-size: 92px; color: #f1ebe5; text-shadow: 0 0px 9px #41c3ff, 0px -2px 1px rgba(41, 41, 41, 0.397); font-weight: bold; letter-spacing: 4px;}
 
 @media screen and (min-width: 1050px) {
     .top-slider{width:100%; margin:30px 0;}
