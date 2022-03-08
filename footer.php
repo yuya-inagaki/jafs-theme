@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-4">
         <div style="padding:20px 0">
-          <p style="padding:0; font-weight:bold;">京都丹波橋事務局</p>
+          <p style="padding:0; font-weight:bold;">京都丹波橋事務局ああああああ</p>
           <p>〒612-0074<br>京都府京都市伏見区桃山井伊掃部西町7番地 ハイツエイワB棟101</p>
           <hr style="padding:0;">
           <p style="padding:0; font-weight:bold;">東京東日本橋事務局</p>
